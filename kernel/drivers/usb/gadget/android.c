@@ -880,7 +880,7 @@ static int ecm_function_init(struct android_usb_function *f, struct usb_composit
 {
 	int ret;
 	struct ecm_function_config *ecm;
-
+	printk("[usb](android) %s start", __func__);
 	f->config = kzalloc(sizeof(struct ecm_function_config), GFP_KERNEL);
 	if (!f->config)
 		return -ENOMEM;
@@ -1274,7 +1274,7 @@ static int android_init_functions(struct android_usb_function **functions,
 	struct device_attribute **attrs;
 	struct device_attribute *attr;
 	int err = 0;
-	int index = 0;
+	int index = 1;
 
 	for (; (f = *functions++); index++) {
 		f->dev_name = kasprintf(GFP_KERNEL, "f_%s", f->name);
@@ -1598,7 +1598,65 @@ static struct device_attribute *android_usb_attributes[] = {
 };
 
 #ifdef CONFIG_LGE_USB_GADGET_DRIVER
-static void android_lge_factory_desc(int enable)
+
+#if 1 /*CONFIG_LGE_PMIC_CABLE_DETECTION*/
+int android_set_factory_mode(void)
+{
+	ECableUsbType cable = USB_UNKNOWN;
+
+	cable = (ECableUsbType)lge_get_cable_info();
+#if 0
+	if ((cable == USB_56K) 
+			|| (cable == USB_910K)) {
+		printk(KERN_INFO " %s : Using Factory Cable (%d)\n", __func__, cable);
+		factory_mode_enabled = true;
+		android_lge_factory_desc(0);
+		android_lge_factory_desc(1);
+		return cable;
+	} else if(cable == USB_130K) {
+		printk(KERN_INFO " %s : Using USB_130K Cable (%d)\n", __func__, cable);
+		return USB_130K;
+#else
+	if ((cable == USB_56K) 
+			|| (cable == USB_130K)
+			|| (cable == USB_910K)) {
+		printk(KERN_INFO " %s : Using Factory Cable (%d)\n", __func__, cable);
+		factory_mode_enabled = true;
+		android_factory_desc(0);
+		android_factory_desc(1);
+		return cable;
+#endif
+	} else {
+		printk(KERN_INFO " %s : Using Normal Cable (%d)\n", __func__, cable);
+		factory_mode_enabled = false;
+		return 0;
+	}
+}
+#else
+void android_set_factory_mode(int is_factory)
+{
+	if (is_factory) {
+		pr_info(" %s : Using Factory Cable\n", __func__);
+		factory_mode_enabled = true;
+		android_factory_desc(0);
+		android_factory_desc(1);
+	}
+	else {
+		pr_info(" %s : Using Normal Cable\n", __func__);
+		factory_mode_enabled = false;
+	}
+}
+#endif
+
+EXPORT_SYMBOL(android_set_factory_mode);
+
+bool android_get_factory_mode(void)
+{
+	return factory_mode_enabled ;
+}
+EXPORT_SYMBOL(android_get_factory_mode);
+
+/*static*/ void android_factory_desc(int enable)
 {
 	struct android_dev *dev = _android_dev;
 	struct usb_composite_dev *cdev = dev->cdev;
@@ -1648,37 +1706,7 @@ static void android_lge_factory_desc(int enable)
 	}
 	return;
 }
-
-int android_lge_is_factory_cable(int *type)
-{
-	int udc_cable = lge_get_cable_info();
-	int manual_nv = udc_cable & LGE_CABLE_TYPE_NV_MANUAL_TESTMODE;
-
-	udc_cable &= LGE_CABLE_TYPE_MASK;
-	if (type != NULL)
-		*type = udc_cable;
-
-	if (manual_nv)
-		return 1;
-
-	return (udc_cable >= LGE_CABLE_TYPE_56K);
-}
-EXPORT_SYMBOL(android_lge_is_factory_cable);
-
-void android_lge_set_factory_mode(int is_factory)
-{
-	if (is_factory) {
-		pr_info(" %s : Using Factory Cable\n", __func__);
-		factory_mode_enabled = true;
-		android_lge_factory_desc(0);
-		android_lge_factory_desc(1);
-	}
-	else {
-		pr_info(" %s : Using Normal Cable\n", __func__);
-		factory_mode_enabled = false;
-	}
-}
-EXPORT_SYMBOL(android_lge_set_factory_mode);
+EXPORT_SYMBOL(android_factory_desc);
 #endif
 
 /*-------------------------------------------------------------------------*/

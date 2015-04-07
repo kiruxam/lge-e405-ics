@@ -28,8 +28,24 @@
 #define LGE_CABLE_TYPE_910K					0x00000009
 #define LGE_CABLE_TYPE_NV_MANUAL_TESTMODE	0x00001000
 
-int android_lge_is_factory_cable(int *type);
-void android_lge_set_factory_mode(int is_factory);
-bool android_lge_get_factory_mode(void);
+/*test*/
+typedef enum
+{
+	USB_UNKNOWN	= 0x00,
+	USB_56K		= 0x02,
+	USB_130K	= 0x04,
+	USB_180K	= 0x05,
+	USB_620K	= 0x09,
+	USB_910K	= 0x0A,
+	USB_OPEN	= 0x0B,
+} ECableUsbType;
+/*test*/
+
+
+
+//int android_lge_is_factory_cable(int *type);
+int android_set_factory_mode(void);
+bool android_get_factory_mode(void);
+void android_factory_desc(int enable);
 
 #endif /* __U_LGEUSB_H__ */
