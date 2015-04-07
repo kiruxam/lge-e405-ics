@@ -578,7 +578,7 @@ extern struct mdp_hist_mgmt *mdp_hist_mgmt_array[];
 #define DMA_DSTC1B_5BITS BIT(2)
 #define DMA_DSTC2R_5BITS BIT(4)
 
-#define DMA_PACK_TIGHT                      BIT(6)
+#define DMA_PACK_TIGHT                      0
 #define DMA_PACK_LOOSE                      0
 #define DMA_PACK_ALIGN_LSB                  0
 /*
@@ -803,15 +803,15 @@ void __mdp_histogram_reset(struct mdp_hist_mgmt *mgmt);
 void mdp_footswitch_ctrl(boolean on);
 
 #ifdef CONFIG_FB_MSM_MDP303
-static inline void mdp4_dsi_cmd_dma_busy_wait(struct msm_fb_data_type *mfd)
-{
+//static inline void mdp4_dsi_cmd_dma_busy_wait(struct msm_fb_data_type *mfd)
+//{
 	/* empty */
-}
+//}
 
-static inline void mdp4_dsi_blt_dmap_busy_wait(struct msm_fb_data_type *mfd)
-{
+//static inline void mdp4_dsi_blt_dmap_busy_wait(struct msm_fb_data_type *mfd)
+//{
 	/* empty */
-}
+//}
 static inline void mdp4_overlay_dsi_state_set(int state)
 {
 	/* empty */

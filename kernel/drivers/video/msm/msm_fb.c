@@ -62,7 +62,7 @@ static struct msm_fb_data_type *local_mfd=0;
 // LGE_CHANGE_E, sohyun.nam@lge.com
 
 #ifdef CONFIG_LGE_LCD_ESD_DETECTION
-extern void lcd_esd_control(void);
+//extern void lcd_esd_control(void);
 #endif
 
 #ifdef CONFIG_FB_MSM_TRIPLE_BUFFER
@@ -1104,7 +1104,7 @@ static int msm_fb_esdcheck(int esdcheck, struct fb_info *info)
 	{
 		down(&msm_fb_esd_sem);
 		mdp_set_dma_pan_info(info, NULL, TRUE);
-		lcd_esd_control();
+		//lcd_esd_control();
 		up(&msm_fb_esd_sem);
 	}
 	return 0;
