@@ -209,8 +209,6 @@ static struct proccomm_regulator_info msm7x27a_pcom_vreg_info[] = {
 	 * S = supply voltage (uV)
 	 * T = type of regulator (smps, pldo, nldo)
 	 *            name   id  supp  min uV    max uV  R   P  A  B  V  S  T*/
-/* LGE_CHANGE_S [murali.ramamaiah@lge.com] 2011-12-21: according to lge board specifications */	 
-#ifdef CONFIG_MACH_LGE
 	PCOM_VREG_SMP(smps1,  3, NULL,  1100000,  1100000, 0, -1, 0, 0, 0, 0, s),	// msmc1
 	PCOM_VREG_SMP(smps2,  4, NULL,  1100000,  1100000, 0, -1, 0, 0, 0, 0, s),	// msmc2
 	PCOM_VREG_SMP(smps3,  2, NULL,  1800000,  1800000, 0, -1, 0, 0, 0, 0, s),	// msme1, emmc
@@ -236,34 +234,6 @@ static struct proccomm_regulator_info msm7x27a_pcom_vreg_info[] = {
 	PCOM_VREG_LDO(ldo19, 57, NULL,  1200000,  1800000, 0, -1, 0, 0, 0, 0, p),	// wlan4
 	/* not used verg_ncp */
 	PCOM_VREG_NCP(ncp,   31, NULL, -1800000, -1800000, 0,     0, 0, 0, 0),	// ncp
-#else /* QCT's */
-		PCOM_VREG_SMP(smps1,  3, NULL, 1100000, 1100000, 0, -1, 0, 0, 0, 0, s),
-	PCOM_VREG_SMP(smps2,  4, NULL, 1100000, 1100000, 0, -1, 0, 0, 0, 0, s),
-	PCOM_VREG_SMP(smps3,  2, NULL, 1800000, 1800000, 0, -1, 0, 0, 0, 0, s),
-	PCOM_VREG_SMP(smps4, 24, NULL, 2100000, 2100000, 0, -1, 0, 0, 0, 0, s),
-	PCOM_VREG_LDO(ldo01, 12, NULL, 2100000, 2100000, 0, -1, 0, 0, 0, 0, p),
-	PCOM_VREG_LDO(ldo02, 13, NULL, 2850000, 2850000, 0, -1, 0, 0, 0, 0, p),
-	PCOM_VREG_LDO(ldo03, 49, NULL, 1200000, 1200000, 0, -1, 0, 0, 0, 0, n),
-	PCOM_VREG_LDO(ldo04, 50, NULL, 1100000, 1100000, 0, -1, 0, 0, 0, 0, n),
-	PCOM_VREG_LDO(ldo05, 45, NULL, 1300000, 1350000, 0, -1, 0, 0, 0, 0, n),
-	PCOM_VREG_LDO(ldo06, 51, NULL, 1200000, 1200000, 0, -1, 0, 0, 0, 0, n),
-	PCOM_VREG_LDO(ldo07,  0, NULL, 2600000, 2600000, 0, -1, 0, 0, 0, 0, p),
-	PCOM_VREG_LDO(ldo08,  9, NULL, 2850000, 2850000, 0, -1, 0, 0, 0, 0, p),
-	PCOM_VREG_LDO(ldo09, 44, NULL, 1800000, 1800000, 0, -1, 0, 0, 0, 0, p),
-	PCOM_VREG_LDO(ldo10, 52, NULL, 1800000, 3000000, 0, -1, 0, 0, 0, 0, p),
-	PCOM_VREG_LDO(ldo11, 53, NULL, 1800000, 1800000, 0, -1, 0, 0, 0, 0, p),
-	PCOM_VREG_LDO(ldo12, 21, NULL, 2850000, 2850000, 0, -1, 0, 0, 0, 0, p),
-	PCOM_VREG_LDO(ldo13, 18, NULL, 2850000, 2850000, 0, -1, 0, 0, 0, 0, p),
-	PCOM_VREG_LDO(ldo14, 16, NULL, 3300000, 3300000, 0, -1, 0, 0, 0, 0, p),
-	PCOM_VREG_LDO(ldo15, 54, NULL, 1800000, 2850000, 0, -1, 0, 0, 0, 0, p),
-	PCOM_VREG_LDO(ldo16, 19, NULL, 1800000, 2850000, 0, -1, 0, 0, 0, 0, p),
-	PCOM_VREG_LDO(ldo17, 56, NULL, 2900000, 3300000, 0, -1, 0, 0, 0, 0, p),
-	PCOM_VREG_LDO(ldo18, 11, NULL, 2700000, 2700000, 0, -1, 0, 0, 0, 0, p),
-	PCOM_VREG_LDO(ldo19, 57, NULL, 1200000, 1800000, 0, -1, 0, 0, 0, 0, p),
-
-	PCOM_VREG_NCP(ncp,   31, NULL, -1800000, -1800000, 0,     0, 0, 0, 0),
-#endif /* CONFIG_MACH_LGE */
-/* LGE_CHANGE_E [murali.ramamaiah@lge.com] 2011-12-21 */
 };
 
 struct proccomm_regulator_platform_data msm7x27a_proccomm_regulator_data = {
