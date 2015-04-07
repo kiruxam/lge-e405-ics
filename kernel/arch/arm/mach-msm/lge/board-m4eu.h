@@ -36,17 +36,17 @@ enum {
 
 /* touch-screen macros */
 #define TS_X_MIN		0
-#define TS_X_MAX		320
+#define TS_X_MAX		240
 #define TS_Y_MIN		0
-#define TS_Y_MAX		480
+#define TS_Y_MAX		320
 #define TS_GPIO_I2C_SDA		10
 #define TS_GPIO_I2C_SCL		9
 #define TS_GPIO_IRQ		39
 #define TS_GPIO_POWER	14
 #define TS_I2C_SLAVE_ADDR	0x48	/* MELFAS Mcs8000(mms-128) addr is 0x48 */
 
-#define SENSOR_GPIO_I2C_SCL	13
-#define SENSOR_GPIO_I2C_SDA	35
+#define SENSOR_GPIO_I2C_SCL	49	/*13*/
+#define SENSOR_GPIO_I2C_SDA	48	/*35*/
 
 #define ACCEL_GPIO_I2C_SCL  	SENSOR_GPIO_I2C_SCL
 #define ACCEL_GPIO_I2C_SDA  	SENSOR_GPIO_I2C_SDA
@@ -57,7 +57,7 @@ enum {
 
 #define ECOM_GPIO_I2C_SCL		SENSOR_GPIO_I2C_SCL
 #define ECOM_GPIO_I2C_SDA		SENSOR_GPIO_I2C_SDA
-#define ECOM_GPIO_INT			130 /* DRDY */	//35 /* motion interrupt 2*/
+#define ECOM_GPIO_INT			35 /*130*/ /* DRDY */	//35 /* motion interrupt 2*/
 #define ECOM_I2C_ADDRESS		0x10 /* slave address 7bit - U0 bmm050 bosch compass sensor */
 #else
 /* accelerometer */
@@ -102,6 +102,7 @@ enum {
 
 /* camera gpio */
 #define GPIO_CAM_RESET      34	// use for chip enable, resetB was tied with VDD.IO
+#define GPIO_CAM_PWDN       42
 
 #ifdef CONFIG_LEDS_AS364X
 #define GPIO_FLASH_EN       
