@@ -31,99 +31,39 @@ static struct platform_device hs_pdev = {
 		.platform_data = &hs_platform_data,
 	},
 };
-#if defined(CONFIG_MACH_MSM7X25A_M4EU_EVB)
-static unsigned int keypad_row_gpios[] = {
-	36, 37
-};
 
+static unsigned int keypad_row_gpios[] = {36, 37};
 static unsigned int keypad_col_gpios[] = {33};
 
 #define KEYMAP_INDEX(col, row) ((col)*ARRAY_SIZE(keypad_row_gpios) + (row))
 
 static const unsigned short keypad_keymap_m4eu[] = {
-	[KEYMAP_INDEX(0, 0)] = KEY_VOLUMEUP,
-	[KEYMAP_INDEX(0, 1)] = KEY_VOLUMEDOWN,
+	[KEYMAP_INDEX(0, 1)] = KEY_VOLUMEUP,
+	[KEYMAP_INDEX(0, 0)] = KEY_VOLUMEDOWN,
 };
-#elif (defined(CONFIG_MACH_MSM7X25A_M4EU_REV_A) || defined(CONFIG_MACH_MSM7X25A_M4EU_REV_B) \
-		|| defined(CONFIG_MACH_MSM7X25A_M4CA_BELL_REV_B) || defined(CONFIG_MACH_MSM7X25A_M4CA_TLS_REV_B))
-static unsigned int keypad_row_gpios[] = {
-	36, 37,38
-};
-
-static unsigned int keypad_col_gpios[] = {32,33};
-
-#define KEYMAP_INDEX(col, row) ((col)*ARRAY_SIZE(keypad_row_gpios) + (row))
-
-static const unsigned short keypad_keymap_m4eu[] = {
-	[KEYMAP_INDEX(0, 0)] = KEY_VOLUMEUP,
-	[KEYMAP_INDEX(0, 1)] = KEY_VOLUMEDOWN,
-	[KEYMAP_INDEX(1, 2)] = HARD_HOME_KEY,
-};
-#elif (defined(CONFIG_MACH_MSM7X25A_M4BR_REV_B))
-static unsigned int keypad_row_gpios[] = {
-	36, 37
-};
-
-static unsigned int keypad_col_gpios[] = {32};
-
-#define KEYMAP_INDEX(col, row) ((col)*ARRAY_SIZE(keypad_row_gpios) + (row))
-
-static const unsigned short keypad_keymap_m4eu[] = {
-	[KEYMAP_INDEX(0, 0)] = KEY_VOLUMEUP,
-	[KEYMAP_INDEX(0, 1)] = KEY_VOLUMEDOWN,
-};
-#endif
 
 int m4eu_matrix_info_wrapper(struct gpio_event_input_devs *input_dev,
 							 struct gpio_event_info *info, void **data, int func)
 {
 	int ret;
 
-	if(func == GPIO_EVENT_FUNC_INIT){
-		gpio_tlmm_config(
-			GPIO_CFG(keypad_col_gpios[0], 0,
-					 GPIO_CFG_OUTPUT, GPIO_CFG_PULL_DOWN, GPIO_CFG_2MA), GPIO_CFG_ENABLE);
-#if (defined(CONFIG_MACH_MSM7X25A_M4EU_REV_A) || defined(CONFIG_MACH_MSM7X25A_M4EU_REV_B) 	\
-	|| defined(CONFIG_MACH_MSM7X25A_M4CA_BELL_REV_B) || defined(CONFIG_MACH_MSM7X25A_M4CA_TLS_REV_B))		
-		gpio_tlmm_config(
-			GPIO_CFG(keypad_col_gpios[1], 0,
-					 GPIO_CFG_OUTPUT, GPIO_CFG_PULL_DOWN, GPIO_CFG_2MA), GPIO_CFG_ENABLE);
-#endif
+	if(func == GPIO_EVENT_FUNC_INIT)
+	{
 		gpio_tlmm_config(
 			GPIO_CFG(keypad_row_gpios[0], 0,
 					 GPIO_CFG_INPUT, GPIO_CFG_PULL_UP, GPIO_CFG_2MA), GPIO_CFG_ENABLE);
 		gpio_tlmm_config(
 			GPIO_CFG(keypad_row_gpios[1], 0,
 					 GPIO_CFG_INPUT, GPIO_CFG_PULL_UP, GPIO_CFG_2MA), GPIO_CFG_ENABLE);
-#if (defined(CONFIG_MACH_MSM7X25A_M4EU_REV_A) || defined(CONFIG_MACH_MSM7X25A_M4EU_REV_B) 	\
-	|| defined(CONFIG_MACH_MSM7X25A_M4CA_BELL_REV_B) || defined(CONFIG_MACH_MSM7X25A_M4CA_TLS_REV_B))
-		gpio_tlmm_config(
-			GPIO_CFG(keypad_row_gpios[2], 0,
-					 GPIO_CFG_INPUT, GPIO_CFG_PULL_UP, GPIO_CFG_2MA), GPIO_CFG_ENABLE);
-#endif
 	}
-	if (func == GPIO_EVENT_FUNC_RESUME) {
-		gpio_tlmm_config(
-			GPIO_CFG(keypad_col_gpios[0], 0,
-					 GPIO_CFG_OUTPUT, GPIO_CFG_PULL_DOWN, GPIO_CFG_2MA), GPIO_CFG_ENABLE);
-#if (defined(CONFIG_MACH_MSM7X25A_M4EU_REV_A) || defined(CONFIG_MACH_MSM7X25A_M4EU_REV_B) 	\
-	|| defined(CONFIG_MACH_MSM7X25A_M4CA_BELL_REV_B) || defined(CONFIG_MACH_MSM7X25A_M4CA_TLS_REV_B))		
-		gpio_tlmm_config(
-			GPIO_CFG(keypad_col_gpios[1], 0,
-					 GPIO_CFG_OUTPUT, GPIO_CFG_PULL_DOWN, GPIO_CFG_2MA), GPIO_CFG_ENABLE);
-#endif
+	if (func == GPIO_EVENT_FUNC_RESUME) 
+	{
 		gpio_tlmm_config(
 			GPIO_CFG(keypad_row_gpios[0], 0,
 					 GPIO_CFG_INPUT, GPIO_CFG_PULL_UP, GPIO_CFG_2MA), GPIO_CFG_ENABLE);
 		gpio_tlmm_config(
 			GPIO_CFG(keypad_row_gpios[1], 0,
 					 GPIO_CFG_INPUT, GPIO_CFG_PULL_UP, GPIO_CFG_2MA), GPIO_CFG_ENABLE);
-#if (defined(CONFIG_MACH_MSM7X25A_M4EU_REV_A) || defined(CONFIG_MACH_MSM7X25A_M4EU_REV_B) 	\
-	|| defined(CONFIG_MACH_MSM7X25A_M4CA_BELL_REV_B) || defined(CONFIG_MACH_MSM7X25A_M4CA_TLS_REV_B))
-		gpio_tlmm_config(
-			GPIO_CFG(keypad_row_gpios[2], 0,
-					 GPIO_CFG_INPUT, GPIO_CFG_PULL_UP, GPIO_CFG_2MA), GPIO_CFG_ENABLE);
-#endif
 	}
 	ret = gpio_event_matrix_func(input_dev, info, data, func);
 	return ret ;
@@ -186,7 +126,7 @@ static struct platform_device *m4eu_gpio_input_devices[] __initdata = {
 };
 
 /* Melfas MCS8000 Touch (mms-128)*/
-#if defined(CONFIG_TOUCHSCREEN_MELFAS_TS)
+#if defined(CONFIG_TOUCHSCREEN_MCS8000_MMS128)
 static struct gpio_i2c_pin ts_i2c_pin[] = {
 	[0] = {
 		.sda_pin	= TS_GPIO_I2C_SDA,
@@ -211,77 +151,35 @@ int ts_set_vreg(unsigned char onoff)
 {
 	int rc;
 	
-#if defined(CONFIG_MACH_MSM7X25A_M4EU_EVB)
-	static struct regulator *ldo1 = NULL;
-	static int init = 0;
-	ldo1 = regulator_get(NULL, "RT8053_LDO1");
-	if (ldo1 == NULL)
-		pr_err(
-			"%s: regulator_get(ldo1) failed\n",
-			__func__);
+#if 1 /*defined(CONFIG_MACH_MSM7X25A_M4EU_EVB)*/
+	static struct regulator *regulator_ts;
+	static int is_touch_Initialized = 0;
 
-	if (onoff) {
-		rc = regulator_set_voltage(ldo1, 3000000, 3000000);
+	//if (is_touch_Initialized == 0) {
+	if (1) {
+		regulator_ts = regulator_get(NULL, "rfrx1");
+		if (regulator_ts == NULL)
+				pr_err("%s: regulator_get(regulator_ts) failed\n", __func__);
+			
+		rc = regulator_set_voltage(regulator_ts, 2100000, 2100000); //is it need fix to 3000000 ?
 		if (rc < 0)
-			pr_err(
-				"%s: regulator_set_voltage(ldo1) failed\n",
-				__func__);
-
-		rc = regulator_enable(ldo1);
-		if (rc < 0)
-			pr_err(
-				"%s: regulator_enable(ldo1) failed\n",
-				__func__);
-
-		init = 1;
-	} else {
-		if (init > 0) {
-			rc = regulator_disable(ldo1);
-			if (rc < 0)
-				pr_err(
-					"%s: regulator_disble(ldo1) failed\n",
-					__func__);
-
-			regulator_put(ldo1);
-		}
-	}
-#elif (defined(CONFIG_MACH_MSM7X25A_M4EU_REV_A) || defined(CONFIG_MACH_MSM7X25A_M4BR_REV_B))
-	
-	if (onoff){
-		printk("[Melfas]touch power on\n");
-		rc = gpio_direction_output(TS_GPIO_POWER, 1);
-	}
-	else{
-		printk("[Melfas]touch power off\n");
-		rc = gpio_direction_output(TS_GPIO_POWER, 0);
-	}	
-	
-#else // (CONFIG_MACH_MSM7X25A_M4EU_REV_B) 
-	struct vreg *vreg_touch;
-	
-	printk(KERN_INFO "[Touch] %s() onoff:%d\n",
-		   __func__, onoff);
-
-	vreg_touch = vreg_get(0, "usim2");
-
-	if (IS_ERR(vreg_touch)) {
-		printk(KERN_INFO "[Touch] vreg_get fail : touch\n");
-		return -EBUSY;
+				pr_err("%s: regulator_set_voltage(regulator_ts) failed\n", __func__);
+		
+		is_touch_Initialized = 1;
 	}
 
 	if (onoff) {
-		rc = vreg_set_level(vreg_touch, 2850);
-		if (rc != 0) {
-			printk(KERN_INFO "[Touch] vreg_set_level failed\n");
-			return -EBUSY;
-		}
-		vreg_enable(vreg_touch);
+		rc = regulator_enable(regulator_ts);
+		if (rc < 0)
+			pr_err("%s: regulator_enable(regulator_ts) failed\n", __func__);
+
 	} else {
-		vreg_disable(vreg_touch);
+		rc = regulator_disable(regulator_ts);
+		if (rc < 0)
+				pr_err("%s: regulator_disable(regulator_ts) failed\n", __func__);
 	}
-#endif	
-	msleep(20);
-	return 0;
+#endif
+	return rc;
 }
 
 static struct touch_platform_data ts_pdata = {
@@ -297,15 +195,8 @@ static struct touch_platform_data ts_pdata = {
 
 static struct i2c_board_info ts_i2c_bdinfo[] = {
 	[0] = {
-/* LGE_CHANGE_S : RECENT_APPS_KEY (Bell Operator in Canada) */ 
-#if defined(CONFIG_MACH_MSM7X25A_M4CA_BELL_REV_B)
-		I2C_BOARD_INFO("touch_mcs8000_bell", TS_I2C_SLAVE_ADDR),
-		.type = "touch_mcs8000_bell",
-#else
 		I2C_BOARD_INFO("touch_mcs8000", TS_I2C_SLAVE_ADDR),
 		.type = "touch_mcs8000",
-#endif
-/* LGE_CHANGE_S : RECENT_APPS_KEY (Bell Operator in Canada) */ 
 		.platform_data = &ts_pdata,
 	},
 };
@@ -318,6 +209,14 @@ static int init_gpio_i2c_pin_touch(
 {
 	i2c_adap_pdata->sda_pin = gpio_i2c_pin.sda_pin;
 	i2c_adap_pdata->scl_pin = gpio_i2c_pin.scl_pin;
+
+//	gpio_tlmm_config(GPIO_CFG(gpio_i2c_pin.sda_pin, 0, GPIO_CFG_OUTPUT,
+//				GPIO_CFG_NO_PULL, GPIO_CFG_2MA), GPIO_CFG_ENABLE);
+//	gpio_tlmm_config(GPIO_CFG(gpio_i2c_pin.scl_pin, 0, GPIO_CFG_OUTPUT,
+//				GPIO_CFG_NO_PULL, GPIO_CFG_2MA), GPIO_CFG_ENABLE);
+	gpio_request(TS_GPIO_I2C_SDA, "Melfas_I2C_SDA");
+	gpio_request(TS_GPIO_I2C_SCL, "Melfas_I2C_SCL");
+	gpio_request(TS_GPIO_IRQ, "Melfas_I2C_INT");
 
 	gpio_tlmm_config(
 		GPIO_CFG(gpio_i2c_pin.sda_pin, 0, GPIO_CFG_OUTPUT,
@@ -334,19 +233,27 @@ static int init_gpio_i2c_pin_touch(
 					GPIO_CFG_NO_PULL, GPIO_CFG_2MA), GPIO_CFG_ENABLE);
 		gpio_set_value(gpio_i2c_pin.reset_pin, 1);
 	}
-#if (defined(CONFIG_MACH_MSM7X25A_M4EU_REV_A) || defined(CONFIG_MACH_MSM7X25A_M4BR_REV_B))
-	gpio_tlmm_config(
-		GPIO_CFG(TS_GPIO_POWER, 0, GPIO_CFG_OUTPUT,
-				GPIO_CFG_NO_PULL, GPIO_CFG_2MA), GPIO_CFG_ENABLE);
-#endif
+//#if (defined(CONFIG_MACH_MSM7X25A_M4EU_REV_A) || defined(CONFIG_MACH_MSM7X25A_M4BR_REV_B))
+//	gpio_tlmm_config(
+//		GPIO_CFG(TS_GPIO_POWER, 0, GPIO_CFG_OUTPUT,
+//				GPIO_CFG_NO_PULL, GPIO_CFG_2MA), GPIO_CFG_ENABLE);
+//#endif
 
 	if (gpio_i2c_pin.irq_pin) {
 		gpio_tlmm_config(
 			GPIO_CFG(gpio_i2c_pin.irq_pin, 0, GPIO_CFG_INPUT,
 					GPIO_CFG_NO_PULL, GPIO_CFG_2MA), GPIO_CFG_ENABLE);
+
+//		gpio_tlmm_config(GPIO_CFG(gpio_i2c_pin.irq_pin, 0, GPIO_CFG_INPUT,
+//					GPIO_CFG_PULL_UP, GPIO_CFG_2MA), GPIO_CFG_ENABLE);
+
 		i2c_board_info_data->irq =
 			MSM_GPIO_TO_INT(gpio_i2c_pin.irq_pin);
 	}
+
+	gpio_free(TS_GPIO_I2C_SDA);
+	gpio_free(TS_GPIO_I2C_SCL);
+	gpio_free(TS_GPIO_IRQ);
 
 	return 0;
 }
@@ -550,6 +457,9 @@ static void __init m4eu_init_i2c_acceleration(int bus_num)
 }
 #endif
 /* proximity */
+#if 0/*defined(CONFIG_BACKLIGHT_BU61800)*/ /*temp test*/
+extern int bu61800_ldo_enable(struct device *dev, unsigned num, unsigned enable);
+#endif
 static int prox_power_set(unsigned char onoff)
 {	
 /* need to be fixed  - for vreg using SUB PMIC */
@@ -593,6 +503,14 @@ static int prox_power_set(unsigned char onoff)
 		}
 	}
 #endif
+#if 0 /*defined(CONFIG_BACKLIGHT_BU61800)*/ /*temp test*/
+	if (onoff == 1)
+		bu61800_ldo_enable(NULL, 1, 1);
+	else
+		bu61800_ldo_enable(NULL, 1, 0);
+
+//	printk("[Proximity] %s() : Power %s\n",__FUNCTION__, onoff ? "On" : "Off");
+#endif
 	return ret;
 }
 
@@ -600,10 +518,10 @@ static struct proximity_platform_data proxi_pdata[] = {
 	[0]={
 		.irq_num	= PROXI_GPIO_DOUT,
 		.power		= prox_power_set,
-		.methods		= 1,
-		.operation_mode		= 2,
-		.debounce	 = 0,
-		.cycle = 0,
+		.methods		= 0,	//1
+		.operation_mode		= 0,	//2
+		.debounce	 = 0,		//0
+		.cycle = 2,			//0
 	},
 	[1]={
 		.irq_num	= PROXI_GPIO_DOUT,
@@ -652,13 +570,14 @@ static struct platform_device proxi_i2c_device = {
 static void __init m4eu_init_i2c_prox(int bus_num)
 {
 	proxi_i2c_device.id = bus_num;
-	if(lge_bd_rev==LGE_REV_11){
-		lge_init_gpio_i2c_pin(&proxi_i2c_pdata, proxi_i2c_pin[0], &prox_i2c_bdinfo[1]);
-		i2c_register_board_info(bus_num, &prox_i2c_bdinfo[1], 1);
-	}else{
+//	if(lge_bd_rev==LGE_REV_11){
+//		lge_init_gpio_i2c_pin(&proxi_i2c_pdata, proxi_i2c_pin[0], &prox_i2c_bdinfo[1]);
+//		i2c_register_board_info(bus_num, &prox_i2c_bdinfo[1], 1);
+//	}else{
 		lge_init_gpio_i2c_pin(&proxi_i2c_pdata, proxi_i2c_pin[0], &prox_i2c_bdinfo[0]);
+
 		i2c_register_board_info(bus_num, &prox_i2c_bdinfo[0], 1);
-	}
+//	}
 
 	platform_device_register(&proxi_i2c_device);
 }
@@ -744,31 +663,29 @@ static void m4eu_nfc_gpio_sleep_set(void)
 #endif
 // [END] 2011.06.24 kiwon.jeon@lge.com NFC
 
-#if (defined(CONFIG_MACH_MSM7X25A_M4EU_REV_A) || defined(CONFIG_MACH_MSM7X25A_M4BR_REV_B))
-void touch_init(void)
-{
-	int rc;
-	
-	/* gpio init */
-	rc = gpio_request(TS_GPIO_POWER, "TOUCH_PANEL_PWR");
-	
-}
-#endif
+//#if (defined(CONFIG_MACH_MSM7X25A_M4EU_REV_A) || defined(CONFIG_MACH_MSM7X25A_M4BR_REV_B))
+//void touch_init(void)
+//{
+//	int rc;
+//	
+//	/* gpio init */
+//	rc = gpio_request(TS_GPIO_POWER, "TOUCH_PANEL_PWR");
+//	
+//}
+//#endif
 void __init lge_add_input_devices(void)
 {
-	platform_add_devices(
-		m4eu_input_devices, ARRAY_SIZE(m4eu_input_devices));
-	platform_add_devices(
-		m4eu_gpio_input_devices, ARRAY_SIZE(m4eu_gpio_input_devices));	
+	platform_add_devices(m4eu_input_devices, ARRAY_SIZE(m4eu_input_devices));
+	platform_add_devices(m4eu_gpio_input_devices, ARRAY_SIZE(m4eu_gpio_input_devices));	
 	lge_add_gpio_i2c_device(m4eu_init_i2c_touch);
 
 #ifdef CONFIG_LGE_DIAGTEST
 	platform_add_devices(m4_ats_input_devices, ARRAY_SIZE(m4_ats_input_devices));
 #endif
 
-#if (defined(CONFIG_MACH_MSM7X25A_M4EU_REV_A) || defined(CONFIG_MACH_MSM7X25A_M4BR_REV_B))	
-	touch_init();
-#endif	
+//#if (defined(CONFIG_MACH_MSM7X25A_M4EU_REV_A) || defined(CONFIG_MACH_MSM7X25A_M4BR_REV_B))	
+//	touch_init();
+//#endif
 #if defined (CONFIG_SENSORS_BMM050) ||defined(CONFIG_SENSORS_BMA250)
 	lge_add_gpio_i2c_device(m4eu_init_i2c_sensor);
 #else
