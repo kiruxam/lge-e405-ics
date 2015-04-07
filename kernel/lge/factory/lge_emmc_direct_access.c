@@ -219,15 +219,15 @@ module_param_call(boot_info, boot_info_write, param_get_int, &boot_info, S_IWUSR
 
 // LGE_CHANGE_S, myunghwan.kim@lge.com
 int is_factory=0;
-int android_lge_is_factory_cable(int *type);
+//int android_lge_is_factory_cable(int *type);
 static int get_is_factory(char *buffer, struct kernel_param *kp)
 {
-	is_factory = android_lge_is_factory_cable(NULL);
+//	is_factory = android_lge_is_factory_cable(NULL);
 	return sprintf(buffer, "%s", is_factory ? "yes" : "no");
 }
 module_param_call(is_factory, NULL, get_is_factory, &is_factory, 0444);
 // LGE_CHANGE_E, myunghwan.kim@lge.com
-
+#if 0
 // LGE_CHANGE_S, myunghwan.kim@lge.com, miniOS controller
 static int is_miniOS = -1;
 unsigned lge_get_is_miniOS(void);
@@ -244,7 +244,7 @@ static int get_is_miniOS(char *buffer, struct kernel_param *kp)
 }
 module_param_call(is_miniOS, update_is_miniOS, get_is_miniOS, &is_miniOS, 0644);
 // LGE_CHANGE_E, myunghwan.kim@lge.com
-
+#endif
 int db_integrity_ready = 0;
 module_param(db_integrity_ready, int, S_IWUSR | S_IRUGO);
 
