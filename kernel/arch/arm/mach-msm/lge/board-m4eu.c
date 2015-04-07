@@ -171,7 +171,7 @@ static int atoi(const char *name)
 
 
 /* LGE_CHANGE_S, sohyun.nam@lge.com, parsing kcal from cmdline */
-#ifdef CONFIG_FB_MSM_MDP_LUT_ENABLE
+#if 1 /*def CONFIG_FB_MSM_MDP_LUT_ENABLE*/
 
 int g_lge_lcd_k_cal[6];
 static int __init lcd_k_cal_setup(char *arg)
@@ -187,8 +187,7 @@ static int __init lcd_k_cal_setup(char *arg)
 	memcpy(buf, arg+6, 3); // B
 	g_lge_lcd_k_cal[2] = atoi(buf);
 
-	// magic code => "cal"
-	memcpy(g_lge_lcd_k_cal+3, arg+9, 3);
+	memcpy(g_lge_lcd_k_cal+3, arg+9, 3); // magic )
 
 	printk(KERN_INFO " *** lcd_k_cal=%s, r:%d, g:%d, b:%d \n", arg, g_lge_lcd_k_cal[0], g_lge_lcd_k_cal[1], g_lge_lcd_k_cal[2]);
 	return 1;
@@ -232,9 +231,9 @@ __setup("lge.panicmode=", panicmode_setup);
 /* LGE_CHANGE_E, [20120622][youngbae.choi@lge.com] */
 
 static struct msm_gpio qup_i2c_gpios_io[] = {
-	{ GPIO_CFG(60, 0, GPIO_CFG_OUTPUT, GPIO_CFG_NO_PULL, GPIO_CFG_2MA),
+	{ GPIO_CFG(60, 0, GPIO_CFG_OUTPUT, GPIO_CFG_NO_PULL, GPIO_CFG_8MA),
 		"qup_scl" },
-	{ GPIO_CFG(61, 0, GPIO_CFG_OUTPUT, GPIO_CFG_NO_PULL, GPIO_CFG_2MA),
+	{ GPIO_CFG(61, 0, GPIO_CFG_OUTPUT, GPIO_CFG_NO_PULL, GPIO_CFG_8MA),
 		"qup_sda" },
 	{ GPIO_CFG(131, 0, GPIO_CFG_OUTPUT, GPIO_CFG_NO_PULL, GPIO_CFG_8MA),
 		"qup_scl" },
@@ -243,9 +242,9 @@ static struct msm_gpio qup_i2c_gpios_io[] = {
 };
 
 static struct msm_gpio qup_i2c_gpios_hw[] = {
-	{ GPIO_CFG(60, 1, GPIO_CFG_INPUT, GPIO_CFG_NO_PULL, GPIO_CFG_2MA),
+	{ GPIO_CFG(60, 1, GPIO_CFG_INPUT, GPIO_CFG_NO_PULL, GPIO_CFG_8MA),
 		"qup_scl" },
-	{ GPIO_CFG(61, 1, GPIO_CFG_INPUT, GPIO_CFG_NO_PULL, GPIO_CFG_2MA),
+	{ GPIO_CFG(61, 1, GPIO_CFG_INPUT, GPIO_CFG_NO_PULL, GPIO_CFG_8MA),
 		"qup_sda" },
 	{ GPIO_CFG(131, 2, GPIO_CFG_INPUT, GPIO_CFG_NO_PULL, GPIO_CFG_8MA),
 		"qup_scl" },
@@ -374,7 +373,7 @@ static void __init msm_device_i2c_init(void)
 
 //LGE_CHANGE_S, [youngbae.choi@lge.com] , 2012-01-16
 /* LCD Refresh issue fix*/
-#if 0
+#if 1
 static void __init msm7x27a_init_ebi2(void)
 {
 	uint32_t ebi2_cfg;
@@ -385,8 +384,6 @@ static void __init msm7x27a_init_ebi2(void)
 		return;
 
 	ebi2_cfg = readl(ebi2_cfg_ptr);
-	if (machine_is_msm7x27a_rumi3() || machine_is_msm7x27a_surf() ||
-			machine_is_msm7625a_surf())
 	ebi2_cfg |= (1 << 4); /* CS2 */
 
 	writel(ebi2_cfg, ebi2_cfg_ptr);
@@ -399,7 +396,6 @@ static void __init msm7x27a_init_ebi2(void)
 		return;
 
 	ebi2_cfg = readl(ebi2_cfg_ptr);
-	if (machine_is_msm7x27a_surf() || machine_is_msm7625a_surf())
 	ebi2_cfg |= (1 << 31);
 
 	writel(ebi2_cfg, ebi2_cfg_ptr);
@@ -457,7 +453,7 @@ static void __init msm7x2x_init(void)
 
 //LGE_CHANGE_S, [youngbae.choi@lge.com] , 2012-01-16
 /* LCD Refresh issue fix*/
-#if 0
+#if 1
 	msm7x27a_init_ebi2();
 #endif
 //LGE_CHANGE_E, [youngbae.choi@lge.com] , 2012-01-16
