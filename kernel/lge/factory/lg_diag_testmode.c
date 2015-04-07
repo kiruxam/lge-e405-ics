@@ -654,7 +654,7 @@ EXPORT_SYMBOL(LGF_TestModeGetDisableInputDevices);
 
 extern void LGF_SendKey(word keycode);
 extern void set_operation_mode(int info);	/* LGE_CHANGE : Test Mode(Flight Mode) 2012-07-03 peter.jung@lge.com Modification for minimum current at SMT. */
-extern int lm3530_get_state(void);
+extern int bu61800_get_state(void);
 
 /* LGE_CHANGE_S : Flight Test Mode [Start]
  * 2012-06-29, peter.jung@lge.com
@@ -685,7 +685,7 @@ void* LGF_TestModeSleepMode(test_mode_req_type * pReq, DIAG_TEST_MODE_F_rsp_type
 
 	switch(req_ptr.test_mode_req.sleep_mode){	
 		case SLEEP_MODE_ON:
-            if(lm3530_get_state() == 1 /* NORMAL_STATE */)
+            if(bu61800_get_state() == 1 /* NORMAL_STATE */)
 			    LGF_SendKey(KEY_POWER);
             
             //send_to_arm9((void*)&req_ptr, (void*)pRsp);
@@ -706,7 +706,7 @@ void* LGF_TestModeSleepMode(test_mode_req_type * pReq, DIAG_TEST_MODE_F_rsp_type
 	  	}
 			break;
 		case FLIGHT_MODE_OFF:            
-            if(lm3530_get_state() == 2 /* SLEEP_STATE */)
+            if(bu61800_get_state() == 2 /* SLEEP_STATE */)
 			    LGF_SendKey(KEY_POWER);
 
 			/* LGE_CHANGE_S : Test Mode(Flight Mode) [Start]
