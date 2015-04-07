@@ -60,6 +60,7 @@ obj-$(CONFIG_MSM_CAMERA_FLASH_LM3559)+= lm3559_flash.o
 obj-$(CONFIG_LEDS_AS364X)+= leds-as364x.o
 obj-$(CONFIG_MT9P017) += mt9p017.o mt9p017_reg.o
 obj-$(CONFIG_HI542) += hi542.o hi542_reg.o
+obj-$(CONFIG_HI351) += hi351.o hi351_reg.o
 # LGE_CHANGE_S : VGA Camera config
 # Camera sensor configuration has been changed for VGA
 #obj-$(CONFIG_MT9V113) += mt9v113.o mt9v113_reg.o

@@ -96,9 +96,16 @@ config MT9P017
 config HI542
 	bool "Hynix Sensor HI542 (BAYER 5M)"
 	depends on MSM_CAMERA && ARCH_MSM7X27A
-	default y
+	default n
 	---help---
 	  HYNIX 5M Bayer Sensor
+
+config HI351
+	bool "Hynix Sensor HI351 (YUV 3M)"
+	depends on MSM_CAMERA && ARCH_MSM7X27A
+	default y
+	---help---
+	  HYNIX 3M YUV Sensor
 
 # LGE_CHANGE_S : VGA Camera config
 # Camera sensor configuration has been changed for VGA
