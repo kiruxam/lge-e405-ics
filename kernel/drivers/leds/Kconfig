@@ -361,6 +361,13 @@ config LEDS_MSM_PMIC
           (Power Management IC) chip on Qualcomm reference boards,
           for example SURF and FFAs.
 
+config LEDS_MSM_PMIC_E1
+	tristate "LED Support for E1"
+	default y
+	depends on ARCH_MSM
+	help
+	  This option enables support for LEDs LGE E1
+
 config LEDS_PMIC8058
 	tristate "LED Support for Qualcomm PMIC8058"
 	default n
@@ -483,6 +490,11 @@ config LEDS_GPIO_M4
           This option enables support for GPIO LEDs
 #LGE_CHANGE_E, [youngbae.choi@lge.com] , 2011-12-10  
 
+config LEDS_GPIO_E1
+	tristate "LED Support for GPIO LEDs"
+	default y
+	help
+	  This option enables support for GPIO LEDs
 
 config LEDS_TRIGGERS
 	bool "LED Trigger support"

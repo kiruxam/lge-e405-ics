@@ -52,6 +52,8 @@ obj-$(CONFIG_LEDS_MSM_PDM)		+= leds-msm-pdm.o
 #LGE_CHANGE_S, [youngbae.choi@lge.com] , 2011-12-08
 obj-$(CONFIG_LEDS_GPIO_M4)		+= leds-gpio-m4.o
 #LGE_CHANGE_E, [youngbae.choi@lge.com] , 2011-12-08
+obj-$(CONFIG_LEDS_GPIO_E1)		+= leds-gpio-e1.o
+obj-$(CONFIG_LEDS_MSM_PMIC_E1)		+= leds-msm-pmic-e1.o
 
 # LED SPI Drivers
 obj-$(CONFIG_LEDS_DAC124S085)		+= leds-dac124s085.o
