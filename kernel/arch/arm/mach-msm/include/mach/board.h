@@ -61,10 +61,10 @@ struct msm_camera_io_clk {
 	uint32_t vfe_clk_rate;
 };
 
-struct msm_cam_expander_info {
-	struct i2c_board_info const *board_info;
-	int bus_id;
-};
+//struct msm_cam_expander_info {
+//	struct i2c_board_info const *board_info;
+//	int bus_id;
+//};
 
 struct msm_camera_device_platform_data {
 	int (*camera_gpio_on) (void);
@@ -72,12 +72,14 @@ struct msm_camera_device_platform_data {
 	struct msm_camera_io_ext ioext;
 	struct msm_camera_io_clk ioclk;
 	uint8_t csid_core;
-	uint8_t is_csiphy;
-	uint8_t is_csic;
-	uint8_t is_csid;
-	uint8_t is_ispif;
-	uint8_t is_vpe;
-	struct msm_bus_scale_pdata *cam_bus_scale_table;
+//	uint8_t is_csiphy;
+//	uint8_t is_csic;
+//	uint8_t is_csid;
+//	uint8_t is_ispif;
+//	uint8_t is_vpe;
+//	struct msm_bus_scale_pdata *cam_bus_scale_table;
+	int (*camera_power_on) (void);
+	int (*camera_power_off)(void);
 };
 enum msm_camera_csi_data_format {
 	CSI_8BIT,
@@ -108,8 +110,8 @@ struct msm_camera_legacy_device_platform_data {
 #define MSM_CAMERA_FLASH_SRC_PMIC (0x00000001<<0)
 #define MSM_CAMERA_FLASH_SRC_PWM  (0x00000001<<1)
 #define MSM_CAMERA_FLASH_SRC_CURRENT_DRIVER	(0x00000001<<2)
-#define MSM_CAMERA_FLASH_SRC_EXT     (0x00000001<<3)
-#define MSM_CAMERA_FLASH_SRC_LED (0x00000001<<3)
+//#define MSM_CAMERA_FLASH_SRC_EXT     (0x00000001<<3)
+//#define MSM_CAMERA_FLASH_SRC_LED (0x00000001<<3)
 
 struct msm_camera_sensor_flash_pmic {
 	uint8_t num_of_src;
@@ -135,16 +137,16 @@ struct msm_camera_sensor_flash_current_driver {
 	const struct pmic8058_leds_platform_data *driver_channel;
 };
 
-struct msm_camera_sensor_flash_external {
-	uint32_t led_en;
-	uint32_t led_flash_en;
-	struct msm_cam_expander_info *expander_info;
-};
+//struct msm_camera_sensor_flash_external {
+//	uint32_t led_en;
+//	uint32_t led_flash_en;
+//	struct msm_cam_expander_info *expander_info;
+//};
 
-struct msm_camera_sensor_flash_led {
-	const char *led_name;
-	const int led_name_len;
-};
+//struct msm_camera_sensor_flash_led {
+//	const char *led_name;
+//	const int led_name_len;
+//};
 
 struct msm_camera_sensor_flash_src {
 	int flash_sr_type;
@@ -154,9 +156,9 @@ struct msm_camera_sensor_flash_src {
 		struct msm_camera_sensor_flash_pwm pwm_src;
 		struct msm_camera_sensor_flash_current_driver
 			current_driver_src;
-		struct msm_camera_sensor_flash_external
-			ext_driver_src;
-		struct msm_camera_sensor_flash_led led_src;
+//		struct msm_camera_sensor_flash_external
+//			ext_driver_src;
+//		struct msm_camera_sensor_flash_led led_src;
 	} _fsrc;
 };
 
@@ -176,7 +178,7 @@ struct msm_camera_sensor_strobe_flash_data {
 	int state;
 };
 
-enum msm_camera_type {
+/*enum msm_camera_type {
 	BACK_CAMERA_2D,
 	FRONT_CAMERA_2D,
 	BACK_CAMERA_3D,
@@ -211,11 +213,11 @@ struct msm_camera_gpio_conf {
 	uint8_t cam_gpio_req_tbl_size;
 	struct msm_gpio_set_tbl *cam_gpio_set_tbl;
 	uint8_t cam_gpio_set_tbl_size;
-};
+};*/
 
 struct msm_camera_sensor_platform_info {
 	int mount_angle;
-	int sensor_reset;
+/*	int sensor_reset;
 	struct camera_vreg_t *cam_vreg;
 	int num_vreg;
 	int32_t (*ext_power_ctrl) (int enable);
@@ -226,7 +228,7 @@ struct msm_actuator_info {
 	struct i2c_board_info const *board_info;
 	int bus_id;
 	int vcm_pwd;
-	int vcm_enable;
+	int vcm_enable;*/
 };
 
 struct msm_camera_sensor_info {
@@ -247,16 +249,16 @@ struct msm_camera_sensor_info {
 	struct msm_camera_csi_params csi_params;
 	struct msm_camera_sensor_strobe_flash_data *strobe_flash_data;
 	char *eeprom_data;
-	enum msm_camera_type camera_type;
-	struct msm_actuator_info *actuator_info;
+//	enum msm_camera_type camera_type;
+//	struct msm_actuator_info *actuator_info;
 };
 
-struct msm_camera_board_info {
-	struct i2c_board_info *board_info;
-	uint8_t num_i2c_board_info;
-};
+//struct msm_camera_board_info {
+//	struct i2c_board_info *board_info;
+//	uint8_t num_i2c_board_info;
+//};
 
-int msm_get_cam_resources(struct msm_camera_sensor_info *);
+int __init msm_get_cam_resources(struct msm_camera_sensor_info *);
 
 struct clk_lookup;
 
@@ -393,13 +395,13 @@ enum mipi_dsi_3d_ctrl {
 };
 
 /* DSI PHY configuration */
-struct mipi_dsi_phy_ctrl {
-	uint32_t regulator[5];
-	uint32_t timing[12];
-	uint32_t ctrl[4];
-	uint32_t strength[4];
-	uint32_t pll[21];
-};
+//struct mipi_dsi_phy_ctrl {
+//	uint32_t regulator[5];
+//	uint32_t timing[12];
+//	uint32_t ctrl[4];
+//	uint32_t strength[4];
+//	uint32_t pll[21];
+//};
 
 struct mipi_dsi_panel_platform_data {
 	int fpga_ctrl_mode;

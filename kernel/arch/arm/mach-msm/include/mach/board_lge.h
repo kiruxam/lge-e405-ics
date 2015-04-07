@@ -267,8 +267,9 @@ struct pp2106_platform_data {
 
 /* LCD panel */
 enum {
-	PANEL_ID_OLD_ILI9486 = 0,
-	PANEL_ID_NEW_ILI9486 = 1,
+PANEL_ID_AUTO = 0,
+PANEL_ID_LGDISPLAY = 1,
+PANEL_ID_TOVIS = 2,
 };
 
 struct msm_panel_ilitek_pdata {
