@@ -329,6 +329,12 @@ config TOUCHSCREEN_MTOUCH
 	  To compile this driver as a module, choose M here: the
 	  module will be called mtouch.
 
+config TOUCHSCREEN_MCS8000_MMS128
+	tristate "MELFAS MCS-8000 (MMS-128) touchscreen"
+	depends on I2C
+	help
+	  Driver for E1BR (MELFAS MCS-8000 MMS-128)
+
 config TOUCHSCREEN_INEXIO
 	tristate "iNexio serial touchscreens"
 	select SERIO
