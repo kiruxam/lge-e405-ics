@@ -457,7 +457,7 @@ static void __init m4eu_init_i2c_acceleration(int bus_num)
 }
 #endif
 /* proximity */
-#if 0/*defined(CONFIG_BACKLIGHT_BU61800)*/ /*temp test*/
+#if 1/*defined(CONFIG_BACKLIGHT_BU61800)*/ /*temp test*/
 extern int bu61800_ldo_enable(struct device *dev, unsigned num, unsigned enable);
 #endif
 static int prox_power_set(unsigned char onoff)
@@ -503,7 +503,7 @@ static int prox_power_set(unsigned char onoff)
 		}
 	}
 #endif
-#if 0 /*defined(CONFIG_BACKLIGHT_BU61800)*/ /*temp test*/
+#if 1 /*defined(CONFIG_BACKLIGHT_BU61800)*/ /*temp test*/
 	if (onoff == 1)
 		bu61800_ldo_enable(NULL, 1, 1);
 	else
