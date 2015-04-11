@@ -1,0 +1,949 @@
+[-----------------------][    0.000000] Initializing cgroup subsys cpu
+[-----------------------][    0.000000] Linux version 3.0.8-perf (neozone@A8Le) (gcc version 4.4.1 (Sourcery G++ Lite 2009q3-68) ) #10 PREEMPT Thu Apr 9 11:59:46 EEST 2015
+[-----------------------][    0.000000] CPU: ARMv7 Processor [410fc051] revision 1 (ARMv7), cr=10c53c7d
+[-----------------------][    0.000000] CPU: VIPT nonaliasing data cache, VIPT aliasing instruction cache
+[-----------------------][    0.000000] Machine: LGE MSM7x25a M4
+[-----------------------][    0.000000] m0 size cd00000 m1 start 20000000
+[-----------------------][    0.000000] memory pool 3 (start 24b00000 size 3500000) initialized
+[-----------------------][    0.000000] Memory policy: ECC disabled, Data cache writeback
+[-----------------------][    0.000000] L310 cache controller enabled
+[-----------------------][    0.000000] L310 cache controller enabled
+[-----------------------][    0.000000] l2x0: 8 ways, CACHE_ID 0x410054c7, AUX_CTRL 0x00540000, Cache size: 262144 B
+[-----------------------][    0.000000] smem_find(137, 72): wrong size 64
+[-----------------------][    0.000000] socinfo_init: v4, id=99, ver=1.1, raw_id=1540, raw_ver=1, hw_plat=2, hw_plat_ver=65536
+[-----------------------][    0.000000] allocating 2494464 bytes at c1153000 (1353000 physical) for fb
+[-----------------------][    0.000000] Built 1 zonelists in Zone order, mobility grouping on.  Total pages: 70404
+[-----------------------][    0.000000] Kernel command line: androidboot.hardware=e1 lge.rev=rev_12 lge.reboot=pwroff uart_console=disable lge.frst=flag3 kcal=136066004208000027 androidboot.emmc=true androidboot.serialno=39d1fa androidboot.baseband=msm
+[-----------------------][    0.000000] BOARD: LGE rev_12
+[-----------------------][    0.000000] UART CONSOLE : disable
+[-----------------------][    0.000000] FRST MODE : flag3
+[-----------------------][    0.000000] PID hash table entries: 2048 (order: 1, 8192 bytes)
+[-----------------------][    0.000000] Dentry cache hash table entries: 65536 (order: 6, 262144 bytes)
+[-----------------------][    0.000000] Inode-cache hash table entries: 32768 (order: 5, 131072 bytes)
+[-----------------------][    0.000000] Memory: 205MB 75MB = 280MB total
+[-----------------------][    0.000000] Memory: 270284k/270284k available, 70708k reserved, 0K highmem
+[-----------------------][    0.000000] Virtual kernel memory layout:
+[-----------------------][    0.000000]     vector  : 0xffff0000 - 0xffff1000   (   4 kB)
+[-----------------------][    0.000000]     fixmap  : 0xfff00000 - 0xfffe0000   ( 896 kB)
+[-----------------------][    0.000000]     DMA     : 0xffc00000 - 0xffe00000   (   2 MB)
+[-----------------------][    0.000000]     vmalloc : 0xd5000000 - 0xfa000000   ( 592 MB)
+[-----------------------][    0.000000]     lowmem  : 0xc0000000 - 0xd4d00000   ( 333 MB)
+[-----------------------][    0.000000]     modules : 0xbf000000 - 0xc0000000   (  16 MB)
+[-----------------------][    0.000000]       .init : 0xc0008000 - 0xc0035000   ( 180 kB)
+[-----------------------][    0.000000]       .text : 0xc0035000 - 0xc071388c   (7035 kB)
+[-----------------------][    0.000000]       .data : 0xc0714000 - 0xc07977e0   ( 526 kB)
+[-----------------------][    0.000000]        .bss : 0xc0797804 - 0xc0944340   (1715 kB)
+[-----------------------][    0.000000] Preemptible hierarchical RCU implementation.
+[-----------------------][    0.000000] NR_IRQS:261
+[-----------------------][    0.000000] sched_clock: 27 bits at 600kHz, resolution 1666ns, wraps every 223696ms
+[-----------------------][    0.000000] Console: colour dummy device 80x30
+[-----------------------][    0.000000] console [tty0] enabled
+[-----------------------][    0.001688] Calibrating delay loop... 299.82 BogoMIPS (lpj=1499136)
+[-----------------------][    0.070169] pid_max: default: 32768 minimum: 301
+[-----------------------][    0.070373] Mount-cache hash table entries: 512
+[-----------------------][    0.070794] Initializing cgroup subsys cpuacct
+[-----------------------][    0.070871] Initializing cgroup subsys devices
+[-----------------------][    0.070918] Initializing cgroup subsys freezer
+[-----------------------][    0.070998] CPU: Testing write buffer coherency: ok
+[-----------------------][    0.071294] hw perfevents: enabled with ARMv7 Cortex-A5 PMU driver, 3 counters available
+[-----------------------][    0.073169] print_constraints: dummy: 
+[-----------------------][    0.073253] rdev_init_debugfs: Error-Bad Function Input
+[-----------------------][    0.073454] NET: Registered protocol family 16
+[-----------------------][    0.074663] smem_find(137, 72): wrong size 64
+[-----------------------][    0.074728] socinfo_init: v4, id=99, ver=1.1, raw_id=1540, raw_ver=1, hw_plat=2, hw_plat_ver=65536
+[-----------------------][    0.074829] acpuclk_7627_init()
+[-----------------------][    0.074878] Shared PLL control available.
+[-----------------------][    0.075073] L val: PLL0: 50, PLL1: 38, PLL2: 62
+[-----------------------][    0.075166] L val: PLL4: 41
+[-----------------------][    0.075363] ACPU running at 600000 KHz
+[-----------------------][    0.075409] Id CPU-KHz PLL DIV AHB-KHz ADIV AXI-KHz D0 D1 D2 D4 U0 U1 U2 U4
+[-----------------------][    0.075484]  0   19200  -1   1    2400    4   30720 -1 -1 -1 -1  5  3  4  6
+[-----------------------][    0.075556]  1   61440   1  12    7680    4   61440 -1 -1 -1 -1  5  3  4  6
+[-----------------------][    0.075629]  2  122880   1   6   15360    4   61440 -1  1 -1 -1  7  3  4  6
+[-----------------------][    0.075701]  3  245760   1   3   30720    4   61440 -1  1 -1 -1  7 -1  8  6
+[-----------------------][    0.075774]  4  300000   2   4   37500    4  150000 -1  1 -1 -1  7 -1  8  6
+[-----------------------][    0.075846]  5  320000   0   3   40000    4  122880 -1  1  4 -1  7 -1  8  6
+[-----------------------][    0.075919]  6  400000   4   2   50000    4  122880  5  1  4 -1  7 -1  8  9
+[-----------------------][    0.075991]  7  480000   0   2   60000    4  122880  5  2  4  6 -1 -1  8  9
+[-----------------------][    0.076063]  8  600000   2   2   75000    4  200000  5  3  4  6 -1 -1 -1  9
+[-----------------------][    0.076136]  9  800000   4   1  100000    4  200000  7 -1  8  6 -1 -1 -1 10
+[-----------------------][    0.076208] 10 1008000   4   1  126000    4  200000 -1 -1 -1  9 -1 -1 -1 -1
+[-----------------------][    0.076269] 5 scaling frequencies supported.
+[-----------------------][    0.076499] print_constraints: smps1: 1100 mV normal 
+[-----------------------][    0.076723] print_constraints: smps2: 1100 mV normal 
+[-----------------------][    0.076919] print_constraints: smps3: 1800 mV normal 
+[-----------------------][    0.077128] print_constraints: smps4: 2100 mV normal 
+[-----------------------][    0.077326] print_constraints: ldo01: 1800 <--> 2100 mV normal 
+[-----------------------][    0.077534] print_constraints: ldo02: 2050 <--> 2850 mV normal 
+[-----------------------][    0.077743] print_constraints: ldo03: 1200 mV normal 
+[-----------------------][    0.077958] print_constraints: ldo04: 1100 mV normal 
+[-----------------------][    0.078176] print_constraints: ldo05: 1300 <--> 1350 mV normal 
+[-----------------------][    0.078373] print_constraints: ldo06: 1200 mV normal 
+[-----------------------][    0.078588] print_constraints: ldo07: 2600 mV normal 
+[-----------------------][    0.078788] print_constraints: ldo08: 2850 mV normal 
+[-----------------------][    0.079004] print_constraints: ldo09: 1800 mV normal 
+[-----------------------][    0.079213] print_constraints: ldo10: 2800 <--> 3000 mV normal 
+[-----------------------][    0.079438] print_constraints: ldo11: 1800 mV normal 
+[-----------------------][    0.079644] print_constraints: ldo12: 2850 mV normal 
+[-----------------------][    0.079868] print_constraints: ldo13: 2850 mV normal 
+[-----------------------][    0.080074] print_constraints: ldo14: 3300 mV normal 
+[-----------------------][    0.080388] print_constraints: ldo15: 1800 <--> 2850 mV normal 
+[-----------------------][    0.080603] print_constraints: ldo16: 2850 <--> 3000 mV normal 
+[-----------------------][    0.080841] print_constraints: ldo17: 3000 <--> 3300 mV normal 
+[-----------------------][    0.081079] print_constraints: ldo18: 2700 mV normal 
+[-----------------------][    0.081291] print_constraints: ldo19: 1200 <--> 1800 mV normal 
+[-----------------------][    0.081521] print_constraints: ncp: 1800 mV normal 
+[-----------------------][    0.083819] ebi2_tovis_power_save: on=1
+[-----------------------][    0.085914] RAM CONSOLE START ADDR : 0xcf00000
+[-----------------------][    0.085968] RAM CONSOLE END ADDR   : 0xcf3dfff
+[-----------------------][    0.086121] ram_console: got buffer at cf00000, size 3e000
+[-----------------------][    0.086194] ram_console: found existing buffer, size 253940, start 113311
+[-----------------------][    0.089596] console [ram-1] enabled
+[-----------------------][    0.089646] CRASH LOG START ADDR : 217309184
+[-----------------------][    0.089689] CRASH LOG END ADDR   : 217313279
+[-----------------------][    0.089836] Boot Reason = 0x20
+[-----------------------][    0.107498] bio: create slab <bio-0> at 0
+[-----------------------][    0.108398] SCSI subsystem initialized
+[-----------------------][    0.108784] usbcore: registered new interface driver usbfs
+[-----------------------][    0.108954] usbcore: registered new interface driver hub
+[-----------------------][    0.109158] usbcore: registered new device driver usb
+[-----------------------][    0.109649] i2c-gpio i2c-gpio.2: using pins 10 (SDA) and 9 (SCL)
+[-----------------------][    0.110056] i2c-gpio i2c-gpio.3: using pins 48 (SDA) and 49 (SCL)
+[-----------------------][    0.110436] i2c-gpio i2c-gpio.4: using pins 30 (SDA) and 16 (SCL)
+[-----------------------][    0.110756] i2c-gpio i2c-gpio.5: using pins 112 (SDA) and 111 (SCL)
+[-----------------------][    0.111143] Advanced Linux Sound Architecture Driver Version 1.0.24.
+[-----------------------][    0.111846] Bluetooth: Core ver 2.16
+[-----------------------][    0.111949] NET: Registered protocol family 31
+[-----------------------][    0.111996] Bluetooth: HCI device and connection manager initialized
+[-----------------------][    0.112059] Bluetooth: HCI socket layer initialized
+[-----------------------][    0.112106] Bluetooth: L2CAP socket layer initialized
+[-----------------------][    0.112373] Bluetooth: SCO socket layer initialized
+[-----------------------][    0.112864] cfg80211: Calling CRDA to update world regulatory domain
+[-----------------------][    0.113263] Switching to clocksource dg_timer
+[-----------------------][    0.122008] NET: Registered protocol family 2
+[-----------------------][    0.122238] IP route cache hash table entries: 4096 (order: 2, 16384 bytes)
+[-----------------------][    0.122693] TCP established hash table entries: 16384 (order: 5, 131072 bytes)
+[-----------------------][    0.123229] TCP bind hash table entries: 16384 (order: 4, 65536 bytes)
+[-----------------------][    0.123664] TCP: Hash tables configured (established 16384 bind 16384)
+[-----------------------][    0.123736] TCP reno registered
+[-----------------------][    0.123796] UDP hash table entries: 256 (order: 0, 4096 bytes)
+[-----------------------][    0.123876] UDP-Lite hash table entries: 256 (order: 0, 4096 bytes)
+[-----------------------][    0.124354] NET: Registered protocol family 1
+[-----------------------][    0.124651] Unpacking initramfs...
+[-----------------------][    0.266021] Freeing initrd memory: 1352K
+[-----------------------][    0.266228] PMU: registered new PMU device of type 0
+[-----------------------][    0.269076] Notify: smsm init
+[-----------------------][    0.269843] get_nand_partitions: no flash partition table in shared memory
+[-----------------------][    0.274761] rpcrouter_smd_remote_notify: smd opened 0x  (null)
+[-----------------------][    0.277639] rpcrouter: Server create rejected, version = 0, program = 3000003b
+[-----------------------][    0.278954] rpcrouter: Server create rejected, version = 0, program = 30000051
+[-----------------------][    0.293889] __msm_rpc_connect: server not found 30000002:20001
+[-----------------------][    0.295331] dma_test_init, minor number 39
+[-----------------------][    0.295484] rmt_storage_get_ramfs: RAMFS entry: addr = 0x0d050000, size = 0x00300000
+[-----------------------][    0.295559] rmt_storage_get_ramfs: RAMFS entry: addr = 0x0cf50000, size = 0x00100000
+[-----------------------][    0.295806] rmt_storage_probe: Remote storage RPC client (0x300000a7)initialized
+[-----------------------][    0.299993] [H2W] gpio_h2w_init 
+[-----------------------][    0.300106] [H2W] gpio_h2w_probe H2W: Registering H2W (headset) driver
+[-----------------------][    0.300121] 
+[-----------------------][    0.300931] input: h2w headset as /devices/virtual/input/input0
+[-----------------------][    0.301031] [H2W] detection_work 
+[-----------------------][    0.301249] lge_panic_handler: got buffer at cf3e000, size 1000
+[-----------------------][    0.301493] diagcmd_probe:lg_fw_diagcmd
+[-----------------------][    0.302843] input: ats_input as /devices/virtual/input/input1
+[-----------------------][    0.302999] lge_emmc_direct_access_init: finished
+[-----------------------][    0.309039] ashmem: initialized
+[-----------------------][    0.309824] fuse init (API version 7.16)
+[-----------------------][    0.310158] msgmni has been set to 530
+[-----------------------][    0.311669] io scheduler noop registered
+[-----------------------][    0.311779] io scheduler cfq registered (default)
+[-----------------------][    0.311879] BU61800 init start
+[-----------------------][    0.312249] Registered led device: lcd-backlight
+[-----------------------][    0.312303] bu61800bl:bu61800_probe: Registering led class dev successfully.
+[-----------------------][    0.314926] bu61800bl:bu61800_probe: done
+[-----------------------][    0.316983] setting peata->panel_info.fb_num to 3. type: 2
+[-----------------------][    0.318364] FrameBuffer[0] 240x320 size=491520 bytes is registered successfully!
+[-----------------------][    0.318671] Read GPIO LCD port 1 
+[-----------------------][    0.319258] msm_serial: driver initialized
+[-----------------------][    0.319604] msm_serial_hs.0: ttyHS0 at MMIO 0xa0200000 (irq = 45) is a MSM HS UART
+[-----------------------][    0.333471] msm_serial_hs module loaded
+[-----------------------][    0.336141] kgsl kgsl-3d0: |kgsl_gpummu_init| MMU type set for device is GPUMMU
+[-----------------------][    0.340364] loop: module loaded
+[-----------------------][    0.340549] pmem: Initializing pmem (user-space) as cached
+[-----------------------][    0.340813] allocating 36700160 bytes at   (null) (24b00000 physical) for pmem
+[-----------------------][    0.340964] pmem: Initializing pmem_adsp (user-space) as cached
+[-----------------------][    0.341191] allocating 17825792 bytes at   (null) (26e00000 physical) for pmem_adsp
+[-----------------------][    0.341329] pmem: Initializing pmem_audio (user-space) as non-cached
+[-----------------------][    0.341568] allocating 372736 bytes at   (null) (27f00000 physical) for pmem_audio
+[-----------------------][    0.341784] lge_tty_atcmd_init: initialize atcmd-ttys
+[-----------------------][    0.554269] SCSI Media Changer driver v0.25 
+[-----------------------][    0.554448] PPP generic driver version 2.4.2
+[-----------------------][    0.554713] PPP Deflate Compression module registered
+[-----------------------][    0.554771] PPP BSD Compression module registered
+[-----------------------][    0.557923] PPP MPPE Compression module registered
+[-----------------------][    0.557989] NET: Registered protocol family 24
+[-----------------------][    0.558081] tun: Universal TUN/TAP device driver, 1.6
+[-----------------------][    0.558136] tun: (C) 1999-2004 Max Krasnyansky <maxk@qualcomm.com>
+[-----------------------][    0.558469] rmnet_init: SMD devices[8]
+[-----------------------][    0.563541] gpio_request: gpio-141 (i2c_host_vbus_en) status -22
+[-----------------------][    0.563618] failed to request 141 GPIO
+[-----------------------][    0.564358] ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver
+[-----------------------][    0.564639] host driver registered w/ tranceiver
+[-----------------------][    0.564878] usbcore: registered new interface driver cdc_acm
+[-----------------------][    0.564938] cdc_acm: USB Abstract Control Model driver for USB modems and ISDN adapters
+[-----------------------][    0.565004] Initializing USB Mass Storage driver...
+[-----------------------][    0.565138] usbcore: registered new interface driver usb-storage
+[-----------------------][    0.565196] USB Mass Storage support registered.
+[-----------------------][    0.565308] usbcore: registered new interface driver ums-alauda
+[-----------------------][    0.565428] usbcore: registered new interface driver ums-cypress
+[-----------------------][    0.565548] usbcore: registered new interface driver ums-datafab
+[-----------------------][    0.565678] usbcore: registered new interface driver ums-freecom
+[-----------------------][    0.565799] usbcore: registered new interface driver ums-isd200
+[-----------------------][    0.565921] usbcore: registered new interface driver ums-jumpshot
+[-----------------------][    0.566043] usbcore: registered new interface driver ums-karma
+[-----------------------][    0.566173] usbcore: registered new interface driver ums-onetouch
+[-----------------------][    0.566296] usbcore: registered new interface driver ums-sddr09
+[-----------------------][    0.566418] usbcore: registered new interface driver ums-sddr55
+[-----------------------][    0.566538] usbcore: registered new interface driver ums-usbat
+[-----------------------][    0.566659] usbcore: registered new interface driver usb_ehset_test
+[-----------------------][    0.567036] peripheral driver registered w/ tranceiver
+[-----------------------][    0.569756] [usb](android) ecm_function_init start
+[-----------------------][    0.569871] android_usb gadget: using random self ethernet address
+[-----------------------][    0.569964] android_usb gadget: using random host ethernet address
+[-----------------------][    0.570506] usb0: MAC 6e:5a:21:d5:44:9e
+[-----------------------][    0.570554] usb0: HOST MAC ee:24:21:7c:b7:c4
+[-----------------------][    0.570883] android_usb gadget: Mass Storage Function, version: 2009/09/11
+[-----------------------][    0.570954] android_usb gadget: Number of LUNs=1
+[-----------------------][    0.571004]  lun0: LUN: removable file: (no medium)
+[-----------------------][    0.571803] android_usb gadget: android_usb ready
+[-----------------------][    0.573231] diagchar initialized now
+[-----------------------][    0.574388] input: touch_mcs8000 as /devices/virtual/input/input2
+[-----------------------][    0.865119] Touch PRODUCT = LE1, comp_ver = 0
+[-----------------------][    0.865178] Firmware ver : [0],HW ver : [0] 
+[-----------------------][    0.865223] .......MFS_ISC_update......... 
+[-----------------------][    0.865266] <MELFAS> TOUCH IC REBOOT!!!
+[-----------------------][    1.083346] <MELFAS> mass erase start
+[-----------------------][    1.083358] 
+[-----------------------][    1.104021]  android_set_factory_mode : Using Normal Cable (11)
+[-----------------------][    1.333478] android_work: did not send uevent (0 0   (null))
+[-----------------------][    1.563344] <MELFAS> TOUCH IC REBOOT!!!
+[-----------------------][    1.784093] GPIO Matrix Keypad Driver: Start keypad matrix for m4_keypad in interrupt mode
+[-----------------------][    1.784551] input: m4_keypad as /devices/virtual/input/input3
+[-----------------------][    1.785674] Bosch Sensortec Device detected!
+[-----------------------][    1.785686] BMA250 registered I2C driver!
+[-----------------------][    1.786033] input: bma250 as /devices/virtual/input/input4
+[-----------------------][    1.787189] 
+[-----------------------][    1.787198] [I]<6><><bmm_probe><1148>function entrance
+[-----------------------][    1.787279] 
+[-----------------------][    1.787286] [I]<6><><bmm_wakeup><183>waking up the chip...
+[-----------------------][    1.789083] 
+[-----------------------][    1.789091] [I]<6><><bmm_wakeup><199>wake up result: succeed, tried times: 1
+[-----------------------][    1.789176] 
+[-----------------------][    1.789183] [I]<6><><bmm_probe><1172>register dump after waking up
+[-----------------------][    1.789283] 00 01 02 03 04 05 06 07 08 09 0a 0b 0c 0d 0e 0f
+[-----------------------][    1.789294] 
+[-----------------------][    1.795486] 32 01 01 00 01 00 01 00 00 00 00 01 06 3f 07 00
+[-----------------------][    1.795498] 00 00 00 ff 00 01 a4 45 00 88 56 63 45 00 00 00
+[-----------------------][    1.795509] 1b 31 00 00 00 00 18 00 e0 02 0f 59 ee 18 f5 fb
+[-----------------------][    1.795521] fe 1c ff ff ff ff ff ff ff ff ff ff ff ff ff ff
+[-----------------------][    1.795533] 
+[-----------------------][    1.796143] 
+[-----------------------][    1.796151] [I]<6><><bmm_check_chip_id><140>read chip id result: 0x32
+[-----------------------][    1.796234] 
+[-----------------------][    1.796241] [N]<5><><bmm_probe><1177>Bosch Sensortec Device bmm050 detected
+[-----------------------][    1.796591] input: bmm050 as /devices/virtual/input/input5
+[-----------------------][    1.805101] 00 01 02 03 04 05 06 07 08 09 0a 0b 0c 0d 0e 0f
+[-----------------------][    1.805114] 
+[-----------------------][    1.811251] 32 01 01 00 01 00 01 00 00 00 00 01 06 3f 07 00
+[-----------------------][    1.811263] 00 00 00 ff 00 01 a4 45 00 88 56 63 45 00 00 00
+[-----------------------][    1.811274] 1b 31 00 00 00 00 18 00 e0 02 0f 59 ee 18 f5 fb
+[-----------------------][    1.811286] fe 1c ff ff ff ff ff ff ff ff ff ff ff ff ff ff
+[-----------------------][    1.811296] 
+[-----------------------][    1.812209] 
+[-----------------------][    1.812216] [N]<5><><bmm_probe><1269>sensor bmm050 probed successfully
+[-----------------------][    1.814413] RPC CALL -- TOD TIME UPDATE: ttick = 291756
+[-----------------------][    1.814426] stamp=58332613726732288, freq = 0
+[-----------------------][    1.814544] drivers/rtc/hctosys.c: unable to open rtc device (rtc0)
+[-----------------------][    1.815761] using rtc device, msm_rtc, for alarms
+[-----------------------][    1.815853] rs30000048 rs30000048.262144: rtc core: registered msm_rtc as rtc0
+[-----------------------][    1.816738] rs30000048 rs30000048.262144: rtc core: registered msm_rtc_secure as rtc1
+[-----------------------][    1.817063] i2c /dev entries driver
+[-----------------------][    1.818188] lirc_dev: IR Remote Control driver registered, major 245 
+[-----------------------][    1.818253] IR NEC protocol handler initialized
+[-----------------------][    1.818298] IR RC5(x) protocol handler initialized
+[-----------------------][    1.818343] IR RC6 protocol handler initialized
+[-----------------------][    1.818388] IR JVC protocol handler initialized
+[-----------------------][    1.818433] IR Sony protocol handler initialized
+[-----------------------][    1.818478] IR RC5 (streamzap) protocol handler initialized
+[-----------------------][    1.818533] IR LIRC bridge handler initialized
+[-----------------------][    1.818576] Linux video capture interface: v2.00
+[-----------------------][    1.818963] msm_camera_vreg_config: msm_camera_vreg_config power on vreg_en enable
+[-----------------------][    1.824398] msm_camera_vreg_config: msm_camera_vreg_config power on vreg_en disable start
+[-----------------------][    1.825409] msm_camera_vreg_config: msm_camera_vreg_config power on vreg_en disable end
+[-----------------------][    1.826384] I2C radio driver for Qualcomm FM Radio Transceiver , Version 1.0.0
+[-----------------------][    1.826578] tavarua_radio: tavarua_probe: probe called
+[-----------------------][    1.827034] msm_batt_init: enter
+[-----------------------][    1.827114] __msm_rpc_connect: server not found 30000089:40001
+[-----------------------][    1.827181] __msm_rpc_connect: server not found 30000089:10001
+[-----------------------][    1.827244] __msm_rpc_connect: server not found 30000089:20001
+[-----------------------][    1.829264] msm_batt_enable_filter: enable vbatt filter: OK
+[-----------------------][    1.829804] BATT: rcvd: 0, 2, 0, 2; 3899, 31, 54  [chg : TRUE]
+[-----------------------][    1.829866]  msm_batt_info : 5    charger : 2  ,
+[-----------------------][    1.829911] BATT: USB charger plugged in
+[-----------------------][    1.829953] BATT: Charging.
+[-----------------------][    1.829991] peter: Battery stats valid : 0   -  0 
+[-----------------------][    1.830041] BATT: voltage = 3899 mV [capacity = 54%]
+[-----------------------][    1.830088] BATT: Supply = usb
+[-----------------------][    1.830296] msm-battery msm-battery: msm_batt_probe : Using PIF ZIG (1)
+[-----------------------][    1.830514] msm_batt_init: Charger/Battery = 0x00040001/0x00050001 (RPC version)
+[-----------------------][    1.830979] device-mapper: ioctl: 4.20.0-ioctl (2011-02-02) initialised: dm-devel@redhat.com
+[-----------------------][    1.831089] Bluetooth: HCI UART driver ver 2.2
+[-----------------------][    1.831138] Bluetooth: HCI H4 protocol initialized
+[-----------------------][    1.831183] Bluetooth: HCI BCSP protocol initialized
+[-----------------------][    1.831229] Bluetooth: HCI_IBS protocol initialized
+[-----------------------][    1.831276] Bluetooth: MSM Sleep Mode Driver Ver 1.1
+[-----------------------][    1.832651] mmc0: mci-version: 0
+[-----------------------][    1.832841] mmc0: No card detect facilities available
+[-----------------------][    1.833184] [LGE][MMC][mmc_rescan        ( ) START!] 
+[-----------------------][    1.833698] [LGE][mmc][mmc_detect_change ( )] result_delayed_work:1, delay:0
+[-----------------------][    1.833776] mmc0: Qualcomm MSM SDCC-core at 0x00000000a0600000 irq 48,0 dma 11 dmacrcri 12
+[-----------------------][    1.833846] mmc0: 8 bit data mode enabled
+[-----------------------][    1.833889] mmc0: 4 bit data mode disabled
+[-----------------------][    1.833931] mmc0: polling status mode disabled
+[-----------------------][    1.833979] mmc0: MMC clock 144000 -> 49152000 Hz, PCLK 100000000 Hz
+[-----------------------][    1.834039] mmc0: Slot eject status = 0
+[-----------------------][    1.834081] mmc0: Power save feature enable = 1
+[-----------------------][    1.834129] mmc0: DM non-cached buffer at ffdc0000, dma_addr 0x23f00000
+[-----------------------][    1.834193] mmc0: DM cmd busaddr 0x23f00000, cmdptr busaddr 0x23f17f40
+[-----------------------][    1.834744] mmc1: mci-version: 0
+[-----------------------][    1.835043] [LGE][MMC][msmsdcc_platform_status_irq( )] irq:104
+[-----------------------][    1.835449] [LGE][mmc][mmc_detect_change ( )] result_delayed_work:1, delay:0
+[-----------------------][    1.835524] mmc1: Qualcomm MSM SDCC-core at 0x00000000a0400000 irq 24,104 dma 8 dmacrcri 6
+[-----------------------][    1.835594] mmc1: 8 bit data mode disabled
+[-----------------------][    1.835636] mmc1: 4 bit data mode enabled
+[-----------------------][    1.835679] mmc1: polling status mode disabled
+[-----------------------][    1.835726] mmc1: MMC clock 144000 -> 49152000 Hz, PCLK 100000000 Hz
+[-----------------------][    1.835786] mmc1: Slot eject status = 0
+[-----------------------][    1.835826] mmc1: Power save feature enable = 1
+[-----------------------][    1.835874] mmc1: DM non-cached buffer at ffd60000, dma_addr 0x23f20000
+[-----------------------][    1.835938] mmc1: DM cmd busaddr 0x23f20000, cmdptr busaddr 0x23f37f40
+[-----------------------][    1.836461] mmc2: mci-version: 0
+[-----------------------][    1.836659] mmc2: No card detect facilities available
+[-----------------------][    1.837006] [LGE][mmc][mmc_detect_change ( )] result_delayed_work:1, delay:0
+[-----------------------][    1.837081] mmc2: Qualcomm MSM SDCC-core at 0x00000000a0500000 irq 26,0 dma 8 dmacrcri 7
+[-----------------------][    1.837149] mmc2: 8 bit data mode disabled
+[-----------------------][    1.837191] mmc2: 4 bit data mode enabled
+[-----------------------][    1.837234] mmc2: polling status mode disabled
+[-----------------------][    1.837281] mmc2: MMC clock 144000 -> 49152000 Hz, PCLK 100000000 Hz
+[-----------------------][    1.837341] mmc2: Slot eject status = 0
+[-----------------------][    1.837383] mmc2: Power save feature enable = 1
+[-----------------------][    1.837431] mmc2: DM non-cached buffer at ffd40000, dma_addr 0x23f40000
+[-----------------------][    1.837493] mmc2: DM cmd busaddr 0x23f40000, cmdptr busaddr 0x23f57f40
+[-----------------------][    1.837981] Registered led device: button-backlight
+[-----------------------][    1.838036] Key LED Off : setting level = 0, current_value is 0x0
+[-----------------------][    1.839868] usbcore: registered new interface driver usbhid
+[-----------------------][    1.839931] usbhid: USB HID core driver
+[-----------------------][    1.840563] logger: created 256K log 'log_main'
+[-----------------------][    1.840758] logger: created 256K log 'log_events'
+[-----------------------][    1.840944] logger: created 256K log 'log_radio'
+[-----------------------][    1.841134] logger: created 256K log 'log_system'
+[-----------------------][    1.842376] msm-codec-dai msm-codec-dai.0: asoc_msm_codec_probe: dev name msm-codec-dai.0
+[-----------------------][    1.843009] msm_soc: ALSA MSM Mixer Setting
+[-----------------------][    1.843651] asoc: msm-codec-dai <-> msm-cpu-dai.0 mapping ok
+[-----------------------][    1.844409] __msm_rpc_connect: server not found 30000002:20001
+[-----------------------][    1.844478] msm_snd_rpc_connect failed (compatible VERS = 131073) 				 trying again with another API
+[-----------------------][    1.844584] ALSA device list:
+[-----------------------][    1.844641]   #0: msm-audio
+[-----------------------][    1.844771] Netfilter messages via NETLINK v0.30.
+[-----------------------][    1.844904] nf_conntrack version 0.5.0 (4244 buckets, 16976 max)
+[-----------------------][    1.845328] ctnetlink v0.93: registering with nfnetlink.
+[-----------------------][    1.845456] NF_TPROXY: Transparent proxy support initialized, version 4.1.0
+[-----------------------][    1.845519] NF_TPROXY: Copyright (c) 2006-2007 BalaBit IT Ltd.
+[-----------------------][    1.845983] xt_time: kernel timezone is -0000
+[-----------------------][    1.846284] ip_tables: (C) 2000-2006 Netfilter Core Team
+[-----------------------][    1.846589] arp_tables: (C) 2002 David S. Miller
+[-----------------------][    1.846714] TCP cubic registered
+[-----------------------][    1.846756] Initializing XFRM netlink socket
+[-----------------------][    1.846986] NET: Registered protocol family 10
+[-----------------------][    1.849254] Mobile IPv6
+[-----------------------][    1.849351] ip6_tables: (C) 2000-2006 Netfilter Core Team
+[-----------------------][    1.849629] IPv6 over IPv4 tunneling driver
+[-----------------------][    1.851184] NET: Registered protocol family 17
+[-----------------------][    1.851278] NET: Registered protocol family 15
+[-----------------------][    1.851563] Bluetooth: RFCOMM TTY layer initialized
+[-----------------------][    1.851646] Bluetooth: RFCOMM socket layer initialized
+[-----------------------][    1.851703] Bluetooth: RFCOMM ver 1.11
+[-----------------------][    1.851748] Bluetooth: BNEP (Ethernet Emulation) ver 1.3
+[-----------------------][    1.851803] Bluetooth: BNEP filters: protocol multicast
+[-----------------------][    1.851859] Bluetooth: HIDP (Human Interface Emulation) ver 1.2
+[-----------------------][    1.852039] L2TP core driver, V2.0
+[-----------------------][    1.852104] PPPoL2TP kernel driver, V2.0
+[-----------------------][    1.852149] VFP support v0.3: implementor 41 architecture 2 part 30 variant 5 rev 1
+[-----------------------][    1.852228] ThumbEE CPU extension supported.
+[-----------------------][    1.855698] clock_late_init() disabled 35 unused clocks
+[-----------------------][    1.857013] input: 7k_handset as /devices/virtual/input/input6
+[-----------------------][    1.860016] input: proximity as /devices/virtual/input/input7
+[-----------------------][    1.860736] [Proximity2] prox_power_onoff() : Power On (opmode: 0)
+[-----------------------][    1.865079] [Proximity2] prox_power_onoff() : Power Off (opmode: 0)
+[-----------------------][    1.866181] rs30000048 rs30000048.262144: setting system clock to 2015-04-09 09:19:38 UTC (1428571178)
+[-----------------------][    1.866394] Rmt Wait Info Success 
+[-----------------------][    1.867133] Freeing init memory: 180K
+[-----------------------][    1.870028] init: could not import file '/init.recovery.e1.rc' from '/init.rc'
+[-----------------------][    2.042119] mmc0: new high speed MMC card at address 0001
+[-----------------------][    2.042196] [LGE][MMC][mmc_add_card      ( )] mmc_hostname:mmc0, type:MMC
+[-----------------------][    2.042749] mmcblk0: mmc0:0001 HYNIX  3.60 GiB 
+[-----------------------][    2.050028]  mmcblk0: p1 p2 p3 p4 < p5 p6 p7 p8 p9 p10 p11 p12 p13 p14 p15 p16 p17 p18 p19 p20 p21 p22 p23 p24 p25 p26 >
+[-----------------------][    2.052458] init: cannot open '/initlogo.rle'
+[-----------------------][    2.053268] android_usb: already disabled
+[-----------------------][    2.054123] init: Unable to open persistent property directory /data/property errno: 2
+[-----------------------][    2.055754] android_usb: already disabled
+[-----------------------][    2.056199] adb_bind_config
+[-----------------------][    2.058144] [LGE][MMC][mmc_add_card      ( )] device_add & uevent posting complete!
+[-----------------------][    2.058251] [LGE][MMC][mmc_rescan        ( ) START!] 
+[-----------------------][    2.058719] mmc1: mmc power up delayed 250ms before
+[-----------------------][    2.065631] adb_open
+[-----------------------][    2.093454] ilitek_qvga_disp_on: display on...
+[-----------------------][    2.093488] ebi2_tovis_power_save: on=1
+[-----------------------][    2.193361] ilitek_qvga_disp_off: display off...
+[-----------------------][    2.269536] android_work: sent uevent USB_STATE=CONNECTED
+[-----------------------][    2.313348] mmc1: mmc power up delayed 250ms after
+[-----------------------][    2.383349] ebi2_tovis_power_save: on=0
+[-----------------------][    2.402361] android_usb gadget: high speed config #1: android
+[-----------------------][    2.402514] android_work: sent uevent USB_STATE=CONFIGURED
+[-----------------------][    2.413338] ilitek_qvga_disp_on: display on...
+[-----------------------][    2.413351] ebi2_tovis_power_save: on=1
+[-----------------------][    2.553333] Tovis Init Started
+[-----------------------][    2.671039] mmc1: host does not support reading read-only switch. assuming write-enable.
+[-----------------------][    2.676098] mmc1: new high speed SDHC card at address 59b4
+[-----------------------][    2.676111] [LGE][MMC][mmc_add_card      ( )] mmc_hostname:mmc1, type:SDHC
+[-----------------------][    2.676614] mmcblk1: mmc1:59b4 USD   14.7 GiB 
+[-----------------------][    2.678333]  mmcblk1: p1
+[-----------------------][    2.679378] [LGE][MMC][mmc_add_card      ( )] device_add & uevent posting complete!
+[-----------------------][    2.679424] [LGE][MMC][mmc_rescan        ( ) START!] 
+[-----------------------][    2.917471] EXT4-fs (mmcblk0p16): recovery complete
+[-----------------------][    2.920926] EXT4-fs (mmcblk0p16): mounted filesystem with ordered data mode. Opts: 
+[-----------------------][    3.053359] 
+[-----------------------][    3.053371] Charger Type: STD DOWNSTREAM PORT
+[-----------------------][    3.061728] BATT: rcvd: 0, 2, 0, 2; 3909, 31, 54  [chg : TRUE]
+[-----------------------][    3.061749]  msm_batt_info : 2    charger : 2  ,
+[-----------------------][    3.061764] BATT: In charging
+[-----------------------][    3.061778] peter: Battery stats valid : 0   -  0 
+[-----------------------][    3.061794] BATT: voltage = 3909 mV [capacity = 54%]
+[-----------------------][    3.255953]  msm_batt_info : 2    charger : 2  ,
+[-----------------------][    6.258039]  msm_batt_info : 2    charger : 2  ,
+[-----------------------][    9.259819] msm_batt_update_psy_status: 11 callbacks suppressed
+[-----------------------][    9.259856] BATT: rcvd: 0, 2, 0, 2; 3917, 31, 54  [chg : TRUE]
+[-----------------------][    9.259874]  msm_batt_info : 2    charger : 2  ,
+[-----------------------][    9.259888] BATT: In charging
+[-----------------------][    9.259901] peter: Battery stats valid : 0   -  0 
+[-----------------------][    9.259918] BATT: voltage = 3917 mV [capacity = 54%]
+[-----------------------][    9.259933] BATT: Supply = usb
+[-----------------------][   12.262339] BATT: rcvd: 0, 2, 0, 2; 3918, 32, 54  [chg : TRUE]
+[-----------------------][   12.262371]  msm_batt_info : 2    charger : 2  ,
+[-----------------------][   12.262386] BATT: In charging
+[-----------------------][   12.262401] peter: Battery stats valid : 0   -  0 
+[-----------------------][   12.262416] BATT: voltage = 3918 mV [capacity = 54%]
+[-----------------------][   12.262431] BATT: Supply = usb
+[-----------------------][   15.327788] BATT: same event count = 1
+[-----------------------][   18.266843] BATT: rcvd: 0, 2, 0, 2; 3910, 32, 54  [chg : TRUE]
+[-----------------------][   18.266876]  msm_batt_info : 2    charger : 2  ,
+[-----------------------][   18.266891] BATT: In charging
+[-----------------------][   18.266904] peter: Battery stats valid : 0   -  0 
+[-----------------------][   18.266921] BATT: voltage = 3910 mV [capacity = 54%]
+[-----------------------][   18.266934] BATT: Supply = usb
+[2015-04-09 18:19:57 KST][   21.268523] BATT: same event count = 1
+[2015-04-09 18:20:00 KST][   24.270408] BATT: rcvd: 0, 2, 0, 2; 3909, 32, 54  [chg : TRUE]
+[2015-04-09 18:20:00 KST][   24.270434]  msm_batt_info : 2    charger : 2  ,
+[2015-04-09 18:20:00 KST][   24.270454] BATT: In charging
+[2015-04-09 18:20:00 KST][   24.270474] peter: Battery stats valid : 0   -  0 
+[2015-04-09 18:20:00 KST][   24.270494] BATT: voltage = 3909 mV [capacity = 54%]
+[2015-04-09 18:20:00 KST][   24.270514] BATT: Supply = usb
+[2015-04-09 18:20:02 KST][   25.573344] mmc0: CMD38: Request timeout
+[2015-04-09 18:20:02 KST][   25.573368] mmc0: SDCC PWR is ON
+[2015-04-09 18:20:02 KST][   25.573431] mmc0: SDCC clks are ON, MCLK rate=49152000
+[2015-04-09 18:20:02 KST][   25.573454] mmc0: SDCC irq is enabled
+[2015-04-09 18:20:02 KST][   25.573474] ===== SDCC-CORE: Register Dumps @base=0xd5024000 =====
+[2015-04-09 18:20:02 KST][   25.573499] Reg=0x00: 0x00000001, 0x00009f00, 0x80000000, 0x00000c66.
+[2015-04-09 18:20:02 KST][   25.573524] Reg=0x10: 0x00000026, 0x00000800, 0x594e4958, 0x205d0039.
+[2015-04-09 18:20:02 KST][   25.573548] Reg=0x20: 0xd1fa7f84, 0x025803e8, 0x00000200, 0x0000200a.
+[2015-04-09 18:20:02 KST][   25.573573] Reg=0x30: 0x00000000, 0x00400400, 0x00000000, 0x008001ff.
+[2015-04-09 18:20:02 KST][   25.573596] Reg=0x40: 0x00000000, 0x00000000, 0x00000000, 0x00000000.
+[2015-04-09 18:20:02 KST][   25.573621] Reg=0x50: 0x00000000, 0x00000000, 0x00000000, 0x00000000.
+[2015-04-09 18:20:02 KST][   25.573644] Reg=0x60: 0x00000000, 0x00000000, 0x00000000, 0x00000000.
+[2015-04-09 18:20:02 KST][   25.580056] mmc_erase: erase error -110, status 0x800
+[2015-04-09 18:20:02 KST][   25.580083] end_request: I/O error, dev mmcblk0, sector 2285568
+[2015-04-09 18:20:02 KST][   25.586624] mmc_erase: group start error -110, status 0x0
+[2015-04-09 18:20:02 KST][   25.586651] end_request: I/O error, dev mmcblk0, sector 2285568
+[2015-04-09 18:20:02 KST][   25.627424] mmc0: DMA channel flushed (0x80000004)
+[2015-04-09 18:20:02 KST][   25.627471] Flush data: 0000c003 23f00000 00000000 00400040 00400040 00000003
+[2015-04-09 18:20:02 KST][   25.627618] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   25.627641] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   25.627698] mmc0: DMA channel flushed (0x80000004)
+[2015-04-09 18:20:02 KST][   25.627721] Flush data: 0000c003 23f00000 00000000 00400040 00400040 00000003
+[2015-04-09 18:20:02 KST][   25.627839] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   25.627861] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   25.627911] mmc0: DMA channel flushed (0x80000004)
+[2015-04-09 18:20:02 KST][   25.627934] Flush data: 0000c003 23f00000 00000000 00400040 00400040 00000003
+[2015-04-09 18:20:02 KST][   25.628046] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   25.628068] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   25.628116] mmc0: DMA channel flushed (0x80000004)
+[2015-04-09 18:20:02 KST][   25.628139] Flush data: 0000c003 23f00000 00000000 00400040 00400040 00000003
+[2015-04-09 18:20:02 KST][   25.628249] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   25.628271] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   25.628323] mmc0: DMA channel flushed (0x80000004)
+[2015-04-09 18:20:02 KST][   25.628346] Flush data: 0000c003 23f00000 00000000 00400040 00400040 00000003
+[2015-04-09 18:20:02 KST][   25.628459] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   25.628481] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   25.628533] mmc0: DMA channel flushed (0x80000004)
+[2015-04-09 18:20:02 KST][   25.628556] Flush data: 0000c003 23f00000 00000000 00400040 00400040 00000003
+[2015-04-09 18:20:02 KST][   25.628666] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   25.628688] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   25.650673] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   25.650719] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   25.657201] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   25.657226] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   25.663669] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   25.663694] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   25.670121] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   25.670143] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   25.676578] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   25.676601] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   25.683026] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   25.683048] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   25.690916] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   25.690944] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   25.697446] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   25.697469] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   25.703924] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   25.703948] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   25.710373] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   25.710394] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   25.716828] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   25.716851] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   25.723268] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   25.723289] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   25.731118] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   25.731144] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   25.737594] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   25.737618] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   25.744054] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   25.744078] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   25.750533] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   25.750554] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   25.756993] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   25.757016] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   25.763451] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   25.763474] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   25.771241] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   25.771268] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   25.777748] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   25.777771] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   25.784209] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   25.784233] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   25.790658] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   25.790679] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   25.797128] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   25.797149] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   25.803609] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   25.803633] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   25.811416] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   25.811443] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   25.817896] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   25.817921] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   25.824356] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   25.824379] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   25.830804] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   25.830826] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   25.837259] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   25.837283] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   25.843716] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   25.843738] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   25.851498] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   25.851524] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   25.858003] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   25.858028] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   25.864473] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   25.864496] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   25.870921] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   25.870943] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   25.877383] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   25.877406] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   25.883838] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   25.883861] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   25.891654] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   25.891683] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   25.898151] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   25.898176] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   25.904611] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   25.904634] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   25.911088] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   25.911111] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   25.917548] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   25.917571] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   25.924004] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   25.924028] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   25.931791] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   25.931818] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   25.938269] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   25.938293] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   25.944729] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   25.944751] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   25.951176] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   25.951198] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   25.957644] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   25.957666] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   25.964121] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   25.964144] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   25.971909] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   25.971934] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   25.978394] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   25.978418] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   25.984859] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   25.984883] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   25.991308] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   25.991331] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   25.997771] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   25.997794] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   26.004234] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   26.004258] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   26.012011] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   26.012038] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   26.018514] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   26.018538] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   26.024978] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   26.025001] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   26.031424] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   26.031446] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   26.038034] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   26.038059] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   26.044513] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   26.044538] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   26.052334] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   26.052363] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   26.058829] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   26.058853] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   26.065316] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   26.065338] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   26.071793] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   26.071816] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   26.078261] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   26.078283] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   26.084716] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   26.084739] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   26.086166] adb_release
+[2015-04-09 18:20:02 KST][   26.086688] adb_open
+[2015-04-09 18:20:02 KST][   26.087374] android_work: sent uevent USB_STATE=DISCONNECTED
+[2015-04-09 18:20:02 KST][   26.094606] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   26.094638] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   26.101163] BATT: rcvd: 3, 0, 0, 2; 3897, 32, 54  [chg : TRUE]
+[2015-04-09 18:20:02 KST][   26.101188]  msm_batt_info : 2    charger : 0  ,
+[2015-04-09 18:20:02 KST][   26.101206] BATT: USB charger removed
+[2015-04-09 18:20:02 KST][   26.101226] BATT: No charging.
+[2015-04-09 18:20:02 KST][   26.101244] peter: Battery stats valid : 0   -  0 
+[2015-04-09 18:20:02 KST][   26.101266] BATT: voltage = 3897 mV [capacity = 54%]
+[2015-04-09 18:20:02 KST][   26.101738] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   26.101764] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   26.108274] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   26.108299] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   26.114793] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   26.114816] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   26.121236] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   26.121259] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   26.127756] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   26.127779] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   26.135733] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   26.135763] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   26.142254] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   26.142278] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   26.148743] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   26.148766] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   26.155266] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   26.155289] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   26.161708] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   26.161729] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   26.168191] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   26.168214] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   26.176024] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   26.176053] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   26.182528] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   26.182551] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   26.188994] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   26.189018] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   26.195469] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   26.195493] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   26.201911] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   26.201933] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   26.208379] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   26.208401] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   26.216213] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   26.216243] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   26.222666] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   26.222689] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   26.229124] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   26.229148] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   26.235611] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   26.235634] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   26.242054] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   26.242076] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   26.248509] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   26.248533] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   26.256334] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   26.256361] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   26.262798] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   26.262819] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   26.269264] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   26.269288] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   26.275728] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   26.275751] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   26.282176] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   26.282198] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   26.288654] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   26.288678] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   26.296469] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   26.296496] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   26.302919] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   26.302943] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   26.309401] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   26.309424] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   26.315868] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   26.315889] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   26.322308] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   26.322329] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   26.328979] msm_otg_suspend: usb in low power mode
+[2015-04-09 18:20:02 KST][   26.329053] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   26.329074] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   26.336869] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   26.336898] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   26.343376] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   26.343399] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   26.349829] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   26.349853] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   26.356286] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   26.356309] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:02 KST][   26.362739] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:02 KST][   26.362763] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:03 KST][   26.369201] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:03 KST][   26.369224] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:03 KST][   26.377028] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:03 KST][   26.377056] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:03 KST][   26.383504] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:03 KST][   26.383528] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:03 KST][   26.389963] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:03 KST][   26.389984] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:03 KST][   26.396443] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:03 KST][   26.396466] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:03 KST][   26.402884] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:03 KST][   26.402906] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:03 KST][   26.409339] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:03 KST][   26.409363] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:03 KST][   26.417168] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:03 KST][   26.417194] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:03 KST][   26.423638] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:03 KST][   26.423663] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:03 KST][   26.430083] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:03 KST][   26.430104] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:03 KST][   26.436544] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:03 KST][   26.436568] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:03 KST][   26.442998] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:03 KST][   26.443021] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:03 KST][   26.449476] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:03 KST][   26.449499] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:03 KST][   26.457289] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:03 KST][   26.457316] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:03 KST][   26.463769] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:03 KST][   26.463793] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:03 KST][   26.470218] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:03 KST][   26.470239] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:03 KST][   26.476679] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:03 KST][   26.476703] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:03 KST][   26.483126] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:03 KST][   26.483148] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:03 KST][   26.489581] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:03 KST][   26.489604] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:03 KST][   26.497394] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:03 KST][   26.497423] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:03 KST][   26.503894] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:03 KST][   26.503919] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:03 KST][   26.510341] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:03 KST][   26.510363] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:03 KST][   26.516799] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:03 KST][   26.516823] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:03 KST][   26.523239] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:03 KST][   26.523261] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:03 KST][   26.529694] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:03 KST][   26.529718] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:03 KST][   26.537529] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:03 KST][   26.537559] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:03 KST][   26.544003] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:03 KST][   26.544026] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:03 KST][   26.550444] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:03 KST][   26.550466] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:03 KST][   26.556931] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:03 KST][   26.556954] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:03 KST][   26.563389] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:03 KST][   26.563413] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:03 KST][   26.569836] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:03 KST][   26.569859] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:03 KST][   26.577669] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:03 KST][   26.577696] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:03 KST][   26.584136] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:03 KST][   26.584159] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:03 KST][   26.590579] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:03 KST][   26.590601] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:03 KST][   26.597041] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:03 KST][   26.597064] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:03 KST][   26.603498] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:03 KST][   26.603521] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:03 KST][   26.609966] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:03 KST][   26.609989] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:03 KST][   26.617739] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:03 KST][   26.617766] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:03 KST][   26.624259] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:03 KST][   26.624283] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:03 KST][   26.630694] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:03 KST][   26.630716] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:03 KST][   26.637151] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:03 KST][   26.637174] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:03 KST][   26.643599] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:03 KST][   26.643623] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:03 KST][   26.650033] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:03 KST][   26.650054] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:03 KST][   26.656821] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:03 KST][   26.656846] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:03 KST][   26.663283] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:03 KST][   26.663304] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:03 KST][   26.669744] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:03 KST][   26.669768] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:03 KST][   26.676198] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:03 KST][   26.676221] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:03 KST][   26.682654] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:03 KST][   26.682678] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:03 KST][   26.689099] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:03 KST][   26.689123] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:03 KST][   26.695623] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:03 KST][   26.695646] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:03 KST][   26.702054] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:03 KST][   26.702078] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:03 KST][   26.708514] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:03 KST][   26.708536] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:03 KST][   26.715001] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:03 KST][   26.715023] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:03 KST][   26.721431] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:03 KST][   26.721453] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:03 KST][   26.727876] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:03 KST][   26.727899] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:03 KST][   26.734383] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:03 KST][   26.734406] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:03 KST][   26.740814] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:03 KST][   26.740838] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:03 KST][   26.747261] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:03 KST][   26.747283] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:03 KST][   26.753711] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:03 KST][   26.753734] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:03 KST][   26.760143] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:03 KST][   26.760164] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:03 KST][   26.766616] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:03 KST][   26.766639] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:03 KST][   26.773101] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:03 KST][   26.773124] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:03 KST][   26.779558] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:03 KST][   26.779579] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:03 KST][   26.786003] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:03 KST][   26.786026] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:03 KST][   26.792439] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:03 KST][   26.792461] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:03 KST][   26.798884] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:03 KST][   26.798908] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:03 KST][   26.805329] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:03 KST][   26.805353] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:03 KST][   26.811813] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:03 KST][   26.811836] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:03 KST][   26.818276] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:03 KST][   26.818299] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:03 KST][   26.824723] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:03 KST][   26.824746] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:03 KST][   26.831153] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:03 KST][   26.831176] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:03 KST][   26.837606] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:03 KST][   26.837628] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:03 KST][   26.844049] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:03 KST][   26.844073] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:03 KST][   26.850533] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:03 KST][   26.850556] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:03 KST][   26.856989] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:03 KST][   26.857013] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:03 KST][   26.863436] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:03 KST][   26.863458] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:03 KST][   26.869899] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:03 KST][   26.869923] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:03 KST][   26.876354] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:03 KST][   26.876376] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:03 KST][   26.882791] mmcblk0: timed out sending r/w cmd command, card status 0x400e00
+[2015-04-09 18:20:03 KST][   26.882813] mmcblk0: command error, retrying timeout
+[2015-04-09 18:20:03 KST][   27.283523]  msm_batt_info : 0    charger : 0  ,
+[2015-04-09 18:20:06 KST][   30.350968] msm_batt_update_psy_status: 5 callbacks suppressed
+[2015-04-09 18:20:06 KST][   30.351013] BATT: rcvd: 3, 0, 0, 2; 3814, 32, 54  [chg : TRUE]
+[2015-04-09 18:20:06 KST][   30.351034]  msm_batt_info : 0    charger : 0  ,
+[2015-04-09 18:20:06 KST][   30.351059] peter: Battery stats valid : 0   -  0 
+[2015-04-09 18:20:06 KST][   30.351083] BATT: voltage = 3814 mV [capacity = 54%]
+[2015-04-09 18:20:06 KST][   30.351103] BATT: Supply = battery
+[2015-04-09 18:20:09 KST][   33.293793] BATT: rcvd: 3, 0, 0, 2; 3810, 32, 54  [chg : TRUE]
+[2015-04-09 18:20:09 KST][   33.293831]  msm_batt_info : 0    charger : 0  ,
+[2015-04-09 18:20:09 KST][   33.293854] peter: Battery stats valid : 0   -  0 
+[2015-04-09 18:20:09 KST][   33.293879] BATT: voltage = 3810 mV [capacity = 54%]
+[2015-04-09 18:20:09 KST][   33.293899] BATT: Supply = battery
+[2015-04-09 18:20:12 KST][   36.287038] BATT: rcvd: 3, 0, 0, 2; 3807, 32, 54  [chg : TRUE]
+[2015-04-09 18:20:12 KST][   36.287076]  msm_batt_info : 0    charger : 0  ,
+[2015-04-09 18:20:12 KST][   36.287101] peter: Battery stats valid : 0   -  0 
+[2015-04-09 18:20:12 KST][   36.287123] BATT: voltage = 3807 mV [capacity = 54%]
+[2015-04-09 18:20:12 KST][   36.287144] BATT: Supply = battery
+[2015-04-09 18:20:13 KST][   36.423348] mmc0: error -110 during resume (card was removed?)
+[2015-04-09 18:20:13 KST][   36.424381] mmc0: DMA channel flushed (0x80000004)
+[2015-04-09 18:20:13 KST][   36.424408] Flush data: 0000c003 23f00000 00000000 00400040 00100010 00000003
+[2015-04-09 18:20:13 KST][   36.431773] mmcblk0: error -110 sending status command, retrying
+[2015-04-09 18:20:13 KST][   36.438973] mmcblk0: error -110 sending status command, retrying
+[2015-04-09 18:20:13 KST][   36.446156] mmcblk0: error -110 sending status command, aborting
+[2015-04-09 18:20:13 KST][   36.446244] EXT4-fs (mmcblk0p16): unable to read superblock
+[2015-04-09 18:20:13 KST][   36.509713] mmc0: DMA channel flushed (0x80000004)
+[2015-04-09 18:20:13 KST][   36.509756] Flush data: 0000c003 23f00000 00000000 00400040 00100010 00000003
+[2015-04-09 18:20:13 KST][   36.517184] mmcblk0: error -110 sending status command, retrying
+[2015-04-09 18:20:13 KST][   36.524383] mmcblk0: error -110 sending status command, retrying
+[2015-04-09 18:20:13 KST][   36.531559] mmcblk0: error -110 sending status command, aborting
+[2015-04-09 18:20:13 KST][   36.531689] EXT4-fs (mmcblk0p16): unable to read superblock
+[2015-04-09 18:20:13 KST][   36.597338] mmc0: DMA channel flushed (0x80000004)
+[2015-04-09 18:20:13 KST][   36.597379] Flush data: 0000c003 23f00000 00000000 00400040 00100010 00000003
+[2015-04-09 18:20:13 KST][   36.604803] mmcblk0: error -110 sending status command, retrying
+[2015-04-09 18:20:13 KST][   36.611979] mmcblk0: error -110 sending status command, retrying
+[2015-04-09 18:20:13 KST][   36.619174] mmcblk0: error -110 sending status command, aborting
+[2015-04-09 18:20:13 KST][   36.619306] EXT4-fs (mmcblk0p16): unable to read superblock
+[2015-04-09 18:20:15 KST][   38.490188] mmc0: DMA channel flushed (0x80000004)
+[2015-04-09 18:20:15 KST][   38.490231] Flush data: 0000c003 23f00000 00000000 00400040 00100010 00000003
+[2015-04-09 18:20:15 KST][   38.497683] mmcblk0: error -110 sending status command, retrying
+[2015-04-09 18:20:15 KST][   38.504883] mmcblk0: error -110 sending status command, retrying
+[2015-04-09 18:20:15 KST][   38.512056] mmcblk0: error -110 sending status command, aborting
+[2015-04-09 18:20:15 KST][   38.512184] EXT4-fs (mmcblk0p14): unable to read superblock
+[2015-04-09 18:20:15 KST][   38.524814] mmc0: DMA channel flushed (0x80000004)
+[2015-04-09 18:20:15 KST][   38.524846] Flush data: 0000c003 23f00000 00000000 00400040 00100010 00000003
+[2015-04-09 18:20:15 KST][   38.532228] mmcblk0: error -110 sending status command, retrying
+[2015-04-09 18:20:15 KST][   38.539574] mmcblk0: error -110 sending status command, retrying
+[2015-04-09 18:20:15 KST][   38.546774] mmcblk0: error -110 sending status command, aborting
+[2015-04-09 18:20:15 KST][   38.546863] EXT4-fs (mmcblk0p16): unable to read superblock
+[2015-04-09 18:20:15 KST][   38.613186] mmc0: DMA channel flushed (0x80000004)
+[2015-04-09 18:20:15 KST][   38.613228] Flush data: 0000c003 23f00000 00000000 00400040 00100010 00000003
+[2015-04-09 18:20:15 KST][   38.620669] mmcblk0: error -110 sending status command, retrying
+[2015-04-09 18:20:15 KST][   38.627868] mmcblk0: error -110 sending status command, retrying
+[2015-04-09 18:20:15 KST][   38.635053] mmcblk0: error -110 sending status command, aborting
+[2015-04-09 18:20:15 KST][   38.635188] EXT4-fs (mmcblk0p16): unable to read superblock
+[2015-04-09 18:20:15 KST][   38.700841] mmc0: DMA channel flushed (0x80000004)
+[2015-04-09 18:20:15 KST][   38.700884] Flush data: 0000c003 23f00000 00000000 00400040 00100010 00000003
+[2015-04-09 18:20:15 KST][   38.708326] mmcblk0: error -110 sending status command, retrying
+[2015-04-09 18:20:15 KST][   38.715529] mmcblk0: error -110 sending status command, retrying
+[2015-04-09 18:20:15 KST][   38.722709] mmcblk0: error -110 sending status command, aborting
+[2015-04-09 18:20:15 KST][   38.722838] EXT4-fs (mmcblk0p16): unable to read superblock
+[2015-04-09 18:20:15 KST][   38.757604] SysRq : Emergency Remount R/O
+[2015-04-09 18:20:15 KST][   38.757691] Emergency Remount complete
+[2015-04-09 18:20:15 KST][   38.758026] sys_reboot: sys_reboot is called from android
+[2015-04-09 18:20:15 KST][   38.758054] sys_reboot: reboot cmd is 0x1234567
+[2015-04-09 18:20:15 KST][   38.759034] Restarting system.
+[2015-04-09 18:20:15 KST][   38.759679] msm_rpc_client_req2: RPC call was not successful (4)
+[2015-04-09 18:20:15 KST][   38.760156] msm: proc_comm: proc comm disabled
+[2015-04-09 18:20:20 KST][   43.723854] regulator regulator.3: could not set voltage for regulator 2 (smps3) to 1800 mV: -5
